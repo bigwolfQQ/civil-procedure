@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民事訴訟法第395條 — 假執行宣告之失效與返還賠償</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233b;
+    --indigo:#2c4a76;
+    --paper-outer:#f3ede0;
+    --paper-inner:#fbf8f1;
+    --paper-card:#fffdf8;
+    --seal:#9c2b3a;
+    --brass:#a9832f;
+    --border:#ddd3bf;
+    --ink-45: rgba(22,35,59,0.45);
+    --row-alt:#f6f1e6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper-outer);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    line-height:1.75;
+  }
+  h1,h2,h3,.serif{font-family:'Noto Serif TC',serif;}
+  a{color:var(--indigo);}
+
+  /* ===== Layout ===== */
+  .shell{display:flex; max-width:1180px; margin:0 auto;}
+  nav.side{
+    width:240px; flex-shrink:0; position:sticky; top:0; align-self:flex-start;
+    height:100vh; overflow-y:auto; padding:28px 18px; background:var(--paper-outer);
+    border-right:1px solid var(--border);
+  }
+  nav.side .nav-title{font-size:12px; letter-spacing:.15em; color:var(--ink-45); margin-bottom:14px;}
+  nav.side ul{list-style:none; margin:0; padding:0;}
+  nav.side li{margin-bottom:2px;}
+  nav.side a{
+    display:block; padding:8px 10px; border-radius:6px; font-size:14px; text-decoration:none;
+    color:var(--ink); border-left:3px solid transparent;
+  }
+  nav.side a.placeholder-link{color:var(--ink-45);}
+  nav.side a.active{background:var(--paper-card); border-left:3px solid var(--indigo); font-weight:700; color:var(--indigo);}
+
+  main{flex:1; min-width:0; background:var(--paper-inner); box-shadow:-6px 0 18px -14px rgba(22,35,59,.35);}
+  section{padding:56px 48px; border-bottom:1px dashed var(--border);}
+  section:last-child{border-bottom:none;}
+
+  /* ===== Cover ===== */
+  .cover{
+    background:linear-gradient(180deg,#1c2c4a,#16233b);
+    color:#f3ede0; padding:64px 48px 56px; position:relative; overflow:hidden;
+  }
+  .cover .eyebrow{
+    display:inline-block; font-size:12px; letter-spacing:.2em; border:1px solid rgba(243,237,224,.4);
+    padding:4px 12px; border-radius:999px; margin-bottom:18px;
+  }
+  .cover h1{font-size:34px; font-weight:900; margin:0 0 8px; line-height:1.4;}
+  .cover .subtitle{font-size:15px; color:rgba(243,237,224,.75); margin-bottom:18px;}
+  .cover-meta{display:flex; gap:10px; flex-wrap:wrap; font-size:12px;}
+  .cover-meta span{
+    border:1px solid rgba(243,237,224,.35); padding:3px 10px; border-radius:999px; color:rgba(243,237,224,.85);
+  }
+  .ver-badge{border-color:rgba(156,43,58,.7) !important; background:rgba(156,43,58,.25);}
+  .seal-mark{
+    position:absolute; top:36px; right:48px; width:92px; height:92px; border:3px solid var(--seal);
+    border-radius:10px; transform:rotate(8deg); display:flex; align-items:center; justify-content:center;
+    color:var(--seal); font-family:'Noto Serif TC',serif; font-weight:900; writing-mode:vertical-rl; font-size:20px;
+    background:rgba(156,43,58,.06);
+  }
+
+  /* ===== Article box ===== */
+  .article-box{
+    position:relative; background:var(--paper-card); border-left:3px solid var(--indigo);
+    padding:24px 26px; border-radius:4px; overflow:hidden; box-shadow:0 1px 0 var(--border);
+  }
+  .article-box .watermark{
+    position:absolute; right:8px; bottom:-18px; font-family:'Noto Serif TC',serif; font-weight:900;
+    font-size:130px; color:var(--ink); opacity:.06; line-height:1; pointer-events:none;
+  }
+  .article-box p{margin:0 0 10px; position:relative; z-index:1;}
+  .article-box .item-tag{color:var(--indigo); font-weight:700; margin-right:6px;}
+
+  h2.sec-title{
+    font-size:22px; font-weight:700; border-left:4px solid var(--brass); padding-left:12px; margin:0 0 22px;
+  }
+  h3.sub-title{font-size:16px; font-weight:700; border-left:3px solid var(--indigo); padding-left:10px; margin:26px 0 12px;}
+
+  table{width:100%; border-collapse:collapse; margin:14px 0 22px; font-size:14px;}
+  thead th{background:var(--ink); color:var(--paper-inner); padding:10px 12px; text-align:left; font-weight:700;}
+  tbody td{padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--row-alt);}
+
+  .conclude-yes{color:var(--ink); font-weight:700; background:linear-gradient(transparent 60%, rgba(169,131,47,.35) 60%);}
+  .conclude-no{color:var(--seal); font-weight:700;}
+
+  /* ===== Placeholder ===== */
+  .placeholder{
+    border:2px dashed var(--brass); border-radius:8px; padding:38px 20px; text-align:center;
+    background:repeating-linear-gradient(135deg, rgba(169,131,47,.05) 0 10px, rgba(169,131,47,.09) 10px 20px);
+    color:var(--ink-45);
+  }
+  .placeholder .icon{font-size:26px; margin-bottom:8px;}
+  .placeholder .badge{
+    display:inline-block; margin-top:10px; font-size:12px; padding:3px 12px; border-radius:999px;
+    border:1px solid var(--brass); color:var(--brass);
+  }
+
+  /* ===== Case cards ===== */
+  .case-card{
+    background:var(--paper-card); border-radius:8px; margin-bottom:22px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(22,35,59,.12), 0 8px 20px -14px rgba(22,35,59,.35);
+  }
+  .case-card .case-head{background:var(--indigo); color:var(--paper-inner); padding:12px 18px; font-weight:700; font-family:'Noto Serif TC',serif;}
+  .case-card .case-body{padding:18px 20px;}
+  .case-card .case-tag{font-size:11px; background:rgba(44,74,118,.12); color:var(--indigo); padding:2px 8px; border-radius:4px; margin-right:6px;}
+  .case-card .case-label{font-weight:700; color:var(--indigo); margin:12px 0 4px; font-size:14px;}
+
+  .edu-note{font-size:12px; color:var(--ink-45); margin-top:6px;}
+
+  /* ===== Mindmap ===== */
+  .mindmap{background:var(--paper-card); border:1px solid var(--border); border-radius:10px; padding:22px; margin-bottom:20px;}
+  .mm-root{
+    display:inline-block; background:var(--ink); color:var(--paper-inner); padding:8px 16px; border-radius:6px;
+    font-family:'Noto Serif TC',serif; font-weight:700; margin-bottom:16px;
+  }
+  .mm-branch{border-left:2px solid var(--indigo); margin-left:10px; padding-left:18px; margin-bottom:14px;}
+  .mm-branch > .mm-label{
+    display:inline-block; background:var(--indigo); color:#fff; padding:4px 12px; border-radius:5px; font-size:13px; font-weight:700; margin-bottom:8px;
+  }
+  .mm-branch.warn > .mm-label{background:var(--seal);}
+  .mm-leaf{border-left:2px dashed var(--brass); margin-left:8px; padding:4px 0 4px 14px; font-size:13px; color:var(--ink);}
+  .mm-leaf::before{content:"— "; color:var(--brass);}
+
+  /* ===== Glossary ===== */
+  .glossary dt{font-family:'Noto Serif TC',serif; font-weight:700; color:var(--indigo); margin-top:14px;}
+  .glossary dd{margin:4px 0 0; color:var(--ink);}
+
+  /* ===== Quickcard ===== */
+  .quickcard{
+    background:var(--ink); color:var(--paper-inner); border-radius:10px; padding:28px 26px; position:relative; overflow:hidden;
+  }
+  .quickcard .deco{position:absolute; right:10px; bottom:-24px; font-family:'Noto Serif TC',serif; font-size:150px; font-weight:900; opacity:.08;}
+  .quickcard h3{margin-top:0; color:var(--paper-inner); border-left:3px solid var(--brass); padding-left:10px;}
+  .mnemonic{background:var(--seal); color:#fff; padding:12px 16px; border-radius:6px; font-family:'Noto Serif TC',serif; font-weight:700; margin:14px 0; text-align:center; font-size:16px;}
+  .quickcard ul{padding-left:20px; position:relative; z-index:1;}
+
+  .link-note{border:1px dashed var(--border); border-radius:8px; padding:16px 18px; margin-top:20px; font-size:14px; color:var(--ink-45);}
+
+  /* mobile */
+  nav.side{display:block;}
+  @media(max-width:980px){
+    .shell{flex-direction:column;}
+    nav.side{
+      position:sticky; top:0; width:100%; height:auto; padding:10px 12px; display:flex; overflow-x:auto;
+      white-space:nowrap; border-right:none; border-bottom:1px solid var(--border); z-index:10;
+    }
+    nav.side .nav-title{display:none;}
+    nav.side ul{display:flex; gap:6px;}
+    nav.side a{padding:7px 12px; border-radius:999px; border:1px solid var(--border); border-left:1px solid var(--border);}
+    nav.side a.active{border-color:var(--indigo);}
+    section{padding:40px 20px;}
+    .cover{padding:48px 20px 40px;}
+    .seal-mark{right:20px; top:24px; width:74px; height:74px; font-size:16px;}
+    .article-box .watermark{font-size:80px;}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="side">
+    <div class="nav-title">目錄　CONTENTS</div>
+    <ul id="navlist">
+      <li><a href="#s-article" class="nav-link">一、條文原文</a></li>
+      <li><a href="#s-structure" class="nav-link">二、條文結構</a></li>
+      <li><a href="#s-elements" class="nav-link">三、要件逐項解析</a></li>
+      <li><a href="#s-theory" class="nav-link placeholder-link">四、學說見解</a></li>
+      <li><a href="#s-practice" class="nav-link">五、實務見解</a></li>
+      <li><a href="#s-cases" class="nav-link">六、教學案例</a></li>
+      <li><a href="#s-mindmap" class="nav-link">七、心智圖</a></li>
+      <li><a href="#s-glossary" class="nav-link">八、專業名詞解釋</a></li>
+      <li><a href="#s-quickcard" class="nav-link">九、速查卡</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="cover">
+      <div class="seal-mark">失效</div>
+      <div class="eyebrow">總則編・第七章 判決・第五節 假執行之宣告</div>
+      <h1>民事訴訟法第395條<br>假執行宣告之失效與返還賠償</h1>
+      <div class="subtitle">條文結構解析・要件分析・實務見解・教學案例・心智圖・專業名詞解釋</div>
+      <div class="cover-meta">
+        <span class="ver-badge">v1.0</span>
+        <span>建立日期：2026-08-25</span>
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=mjib007.civil-procedure.395" alt="visitor" style="height:20px;vertical-align:middle;border-radius:4px;">
+      </div>
+    </header>
+
+    <!-- 一、條文原文 -->
+    <section id="s-article">
+      <h2 class="sec-title">一、條文原文</h2>
+      <div class="article-box">
+        <span class="watermark">395</span>
+        <p><span class="item-tag">Ⅰ</span>假執行之宣告，因就本案判決或該宣告有廢棄或變更之判決，自該判決宣示時起，於其廢棄或變更之範圍內，失其效力。</p>
+        <p><span class="item-tag">Ⅱ</span>法院廢棄或變更宣告假執行之本案判決者，應依被告之聲明，將其因假執行或因免假執行所為給付及所受損害，於判決內命原告返還及賠償，被告未聲明者，應告以得為聲明。</p>
+        <p><span class="item-tag">Ⅲ</span>僅廢棄或變更假執行之宣告者，前項規定，於其後廢棄或變更本案判決之判決適用之。</p>
+      </div>
+      <h3 class="sub-title">關聯條文</h3>
+      <table>
+        <thead><tr><th>條號</th><th>關係</th></tr></thead>
+        <tbody>
+          <tr><td>§389</td><td>法院應依職權宣告假執行之情形（本條第1項「假執行之宣告」的來源之一）</td></tr>
+          <tr><td>§390</td><td>法院應依聲請宣告假執行之情形</td></tr>
+          <tr><td>§392</td><td>供擔保免為假執行之機制，對應本條第2項「因免假執行所為給付及所受損害」</td></tr>
+          <tr><td>§455</td><td>第二審就假執行部分之上訴應先為辯論及裁判</td></tr>
+          <tr><td>§531</td><td>假扣押裁定經撤銷後之損害賠償規定，性質可與本條第2項比較</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 二、條文結構 -->
+    <section id="s-structure">
+      <h2 class="sec-title">二、條文結構總覽</h2>
+      <table>
+        <thead><tr><th>項次</th><th>規範內容</th><th>性質</th></tr></thead>
+        <tbody>
+          <tr><td>第1項</td><td>假執行宣告因本案判決或該宣告嗣後被廢棄／變更而失其效力，失效範圍與時點</td><td>形成力之當然效果（無待聲明，法院依職權宣告失效範圍）</td></tr>
+          <tr><td>第2項</td><td>本案判決遭廢棄／變更時，被告得聲明請求返還給付、賠償損害；法院負闡明義務</td><td>附帶請求，採處分權主義（須被告聲明）</td></tr>
+          <tr><td>第3項</td><td>僅假執行宣告本身被廢棄（本案判決未動）時，第2項規定延後至日後本案判決也被廢棄／變更時才適用</td><td>銜接規定，避免被告於本案判決尚未確定前重複求償</td></tr>
+        </tbody>
+      </table>
+      <p>三項規定可理解為一組時間軸：<strong>①假執行失效（Ⅰ）→ ②本案判決同時或已經被推翻時，被告可一併求償（Ⅱ）→ ③若這次只推翻假執行宣告、本案判決還沒動，求償要等到本案判決以後也被推翻才能一起主張（Ⅲ）</strong>。</p>
+    </section>
+
+    <!-- 三、要件解析 -->
+    <section id="s-elements">
+      <h2 class="sec-title">三、要件逐項解析</h2>
+
+      <h3 class="sub-title">（一）第1項：假執行宣告失效之要件</h3>
+      <table>
+        <thead><tr><th>要件</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>①已有假執行宣告</td><td>不論依§389職權宣告或依§390、§392聲請宣告，均在適用範圍內</td></tr>
+          <tr><td>②本案判決或假執行宣告本身經廢棄或變更</td><td>不限審級，第二審、第三審皆可能是造成廢棄變更之判決</td></tr>
+          <tr><td>③失效範圍</td><td>僅於「廢棄或變更之範圍內」失效，非當然全部失效——例如僅一部廢棄，假執行宣告也僅該部分失效</td></tr>
+          <tr><td>④失效時點</td><td>自廢棄或變更之判決「宣示時」起發生，不待該判決確定，與一般判決效力發生時點（確定時）不同，凸顯假執行制度重視即時性</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">（二）第2項：返還及賠償之要件</h3>
+      <table>
+        <thead><tr><th>要件</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>①法院廢棄或變更「宣告假執行之本案判決」</td><td>重點在本案判決本身被推翻，非僅假執行宣告被單獨撤銷</td></tr>
+          <tr><td>②被告聲明</td><td>採處分權主義，法院不得依職權為之；此為附帶於本案訴訟之聲明，毋須另行起訴</td></tr>
+          <tr><td>③請求範圍</td><td>因假執行所為給付（原告受領部分應返還）＋因免假執行所為給付及所受損害（被告供擔保之費用、利息等損害）</td></tr>
+          <tr><td>④效果</td><td>法院於判決內一併諭知原告返還及賠償</td></tr>
+          <tr><td>⑤闡明義務</td><td>被告未聲明者，法院應告以得為聲明，屬法院對當事人之闡明義務，避免被告因不諳程序而喪失權利</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">（三）第3項：銜接規定之判斷</h3>
+      <p>考點在於區分兩種廢棄態樣：</p>
+      <table>
+        <thead><tr><th>情形</th><th>能否立即依第2項求償</th></tr></thead>
+        <tbody>
+          <tr><td>本案判決與假執行宣告一併被廢棄</td><td class="conclude-yes">可以（直接適用第2項）</td></tr>
+          <tr><td>僅假執行宣告被廢棄，本案判決維持</td><td class="conclude-no">不可以，須待本案判決日後也遭廢棄或變更時才能一併主張（第3項）</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 四、學說見解（佔位） -->
+    <section id="s-theory">
+      <h2 class="sec-title">四、學說見解</h2>
+      <div class="placeholder">
+        <div class="icon">📖</div>
+        尚未加入學說見解內容
+        <div>搜尋結果僅查得相關教科書書目（陳計男、吳明軒、楊建華、陳榮宗與林慶苗合著、邱聯恭口述講義等），惟未能取得可直接引用、附頁碼查證之具體論述段落，依防幻覺原則暫不寫入。</div>
+        <div class="badge">待補充</div>
+      </div>
+    </section>
+
+    <!-- 五、實務見解 -->
+    <section id="s-practice">
+      <h2 class="sec-title">五、實務見解</h2>
+
+      <h3 class="sub-title">大法官解釋／憲法法庭判決</h3>
+      <div class="placeholder">
+        <div class="icon">⚖️</div>
+        本條（§395）目前查無大法官解釋或憲法法庭判決
+        <div>理由：本條屬程序法上之技術性規定，未見有人以此聲請違憲審查。（提醒：「釋字第395號解釋」內容為公務員懲戒案件，號數與本條僅屬巧合，並非本條之解釋，特此註明避免混淆）</div>
+        <div class="badge">查無</div>
+      </div>
+
+      <h3 class="sub-title">法院判決／決議</h3>
+      <table>
+        <thead><tr><th>裁判</th><th>要旨</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>最高法院74年度第4次民事庭會議決議<br>89年度台抗字第38號裁定</td>
+            <td>本案判決及假執行宣告經上級審廢棄確定後，原假執行宣告已無從復活，被告因免假執行所供擔保之原因即已消滅，得聲請返還提存物。</td>
+          </tr>
+          <tr>
+            <td>臺灣高等法院99年度上易字第874號判決</td>
+            <td>本案判決經第三審法院廢棄發回更審者，原第二審法院准予假執行之宣告因無所附麗，於廢棄之範圍內已失其效力。</td>
+          </tr>
+          <tr>
+            <td>最高法院（具參考價值裁判要旨）</td>
+            <td>民事訴訟法第395條第2項規定，乃為保護「被告」利益而設，原告並非本項規定之請求主體，不得類推適用本項規定向被告求償。</td>
+          </tr>
+          <tr>
+            <td>臺灣高等法院102年度上更(一)字第73號民事判決</td>
+            <td>被告請求返還因免假執行所供擔保金並加計利息時，其性質與請求給付金錢以回復原狀之情形無異，類推適用民法第213條第2項計算利息。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:var(--ink-45);">本頁所列判決／決議可至司法院裁判書查詢系統（<a href="https://judgment.judicial.gov.tw/" target="_blank">https://judgment.judicial.gov.tw/</a>）輸入對應案號自行查閱全文。</p>
+    </section>
+
+    <!-- 六、教學案例 -->
+    <section id="s-cases">
+      <h2 class="sec-title">六、教學案例</h2>
+      <p class="edu-note">以下案例均為教學虛構情境，人物、案號、金額均非真實案件，僅供理解要件之用。</p>
+
+      <div class="case-card">
+        <div class="case-head">案例一・本案判決全部廢棄，被告依第2項求償</div>
+        <div class="case-body">
+          <span class="case-tag">第2項基本型</span>
+          <p>甲向乙提起請求給付買賣價金訴訟，第一審判決甲勝訴，並依§389職權宣告假執行，甲隨即持判決執行取得乙帳戶存款100萬元。乙提起上訴，第二審審理後認甲之請求無理由，將第一審判決全部廢棄並改判甲敗訴。</p>
+          <div class="case-label">爭點</div>
+          <p>假執行宣告是否當然失效？乙得否於本案一併請求甲返還100萬元？</p>
+          <div class="case-label">分析</div>
+          <p>依第1項，本案判決既經第二審廢棄，假執行宣告自第二審判決宣示時起失其效力。又本案判決本身被廢棄，屬第2項之情形，乙得於第二審程序中聲明請求甲返還已受領之100萬元，並就此聲明損害賠償（如遲延利息）。</p>
+          <div class="case-label">結論</div>
+          <p class="conclude-yes">乙得依第2項聲明求償，法院應於判決內一併諭知甲返還及賠償。</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">案例二・被告供擔保免為假執行後求償</div>
+        <div class="case-body">
+          <span class="case-tag">因免假執行所受損害</span>
+          <p>丙訴請丁給付工程款，第一審判決丁敗訴並宣告假執行，丁依§392提供擔保60萬元以免為假執行（該擔保款項需支付一定手續費及機會成本利息）。丙提起上訴，第二審認丁不負給付義務，將第一審判決廢棄改判丙敗訴。</p>
+          <div class="case-label">爭點</div>
+          <p>丁得否就其供擔保所生之損害（如擔保費用、資金無法運用之利息損失）請求丙賠償？</p>
+          <div class="case-label">分析</div>
+          <p>本案判決既遭廢棄，屬第2項「因免假執行所為給付及所受損害」之情形。依實務見解，此類損害之利息計算類推適用民法第213條第2項，自損害發生（提存）時起算法定利息。</p>
+          <div class="case-label">結論</div>
+          <p class="conclude-yes">丁得依第2項聲明請求丙賠償供擔保所受之損害及利息。</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">案例三・僅假執行宣告被廢棄，本案判決維持（第3項情境）</div>
+        <div class="case-body">
+          <span class="case-tag">第3項銜接規定</span>
+          <p>戊訴請己返還借款，第一審判決己敗訴並宣告假執行。己僅就「假執行宣告部分」聲明不服（本案判決本身並未提起實體上訴，或該部分上訴後仍被維持），第二審審理後認為原宣告假執行有不當之處，將假執行宣告部分廢棄，但本案判決（己敗訴）本身維持不動。</p>
+          <div class="case-label">爭點</div>
+          <p>己得否立即依第2項規定，於本案判決仍存在的情況下請求戊返還已受領之給付？</p>
+          <div class="case-label">分析</div>
+          <p>此時僅假執行宣告本身被廢棄，本案判決仍存在且有效，並不符合第2項「廢棄或變更宣告假執行之本案判決」之要件。依第3項規定，須等到日後本案判決另經廢棄或變更之判決時，第2項規定才對其適用。</p>
+          <div class="case-label">結論</div>
+          <p class="conclude-no">己現階段尚不得依第2項聲明求償，須待本案判決日後也遭廢棄或變更時才能一併主張。</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">案例四・被告未聲明，法院應告知得為聲明</div>
+        <div class="case-body">
+          <span class="case-tag">闡明義務</span>
+          <p>庚訴請辛給付貨款，第一審判決辛敗訴並宣告假執行，庚受領給付後，辛提起上訴，第二審廢棄改判庚敗訴。辛因不諳訴訟程序，於言詞辯論中僅陳述本案答辯，未就返還及賠償一事有所聲明。</p>
+          <div class="case-label">爭點</div>
+          <p>法院得否逕依職權命庚返還及賠償？若不能，法院應如何處理？</p>
+          <div class="case-label">分析</div>
+          <p>第2項規定採處分權主義，法院不得依職權逕為返還及賠償之諭知；但為保障被告權益，同項後段明文規定「被告未聲明者，應告以得為聲明」，法院負有闡明義務，應主動曉諭辛得聲明請求返還及賠償。</p>
+          <div class="case-label">結論</div>
+          <p>法院不得逕依職權諭知返還及賠償，但應告知辛得為聲明；辛經告知後聲明，法院始得於判決內一併處理。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 七、心智圖 -->
+    <section id="s-mindmap">
+      <h2 class="sec-title">七、心智圖</h2>
+
+      <h3 class="sub-title">詳細版</h3>
+      <div class="mindmap">
+        <div class="mm-root">民訴法§395 假執行宣告之失效與返還賠償</div>
+
+        <div class="mm-branch">
+          <div class="mm-label">Ⅰ 假執行宣告失效</div>
+          <div class="mm-leaf">要件：本案判決或該宣告經廢棄或變更</div>
+          <div class="mm-leaf">範圍：僅於廢棄或變更之範圍內失效</div>
+          <div class="mm-leaf">時點：自廢棄／變更判決「宣示時」起（不待確定）</div>
+        </div>
+
+        <div class="mm-branch">
+          <div class="mm-label">Ⅱ 返還及賠償</div>
+          <div class="mm-leaf">前提：本案判決本身被廢棄或變更</div>
+          <div class="mm-leaf">程序：須被告聲明（處分權主義）</div>
+          <div class="mm-leaf">範圍①：因假執行所為給付 → 命原告返還</div>
+          <div class="mm-leaf">範圍②：因免假執行所為給付及所受損害 → 命原告賠償</div>
+          <div class="mm-leaf">法院義務：被告未聲明 → 應告以得為聲明</div>
+        </div>
+
+        <div class="mm-branch warn">
+          <div class="mm-label">Ⅲ 銜接規定（例外情境）</div>
+          <div class="mm-leaf">僅假執行宣告被廢棄，本案判決未動</div>
+          <div class="mm-leaf">此時尚不適用第2項</div>
+          <div class="mm-leaf">須待「日後」本案判決也遭廢棄或變更時，第2項才適用</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">簡版</h3>
+      <div class="mindmap">
+        <div class="mm-root">§395</div>
+        <div class="mm-branch"><div class="mm-label">失效（Ⅰ）</div><div class="mm-leaf">廢棄範圍內、宣示時起失效</div></div>
+        <div class="mm-branch"><div class="mm-label">返還賠償（Ⅱ）</div><div class="mm-leaf">本案判決被廢棄＋被告聲明</div></div>
+        <div class="mm-branch warn"><div class="mm-label">延後適用（Ⅲ）</div><div class="mm-leaf">只廢假執行、本案未動 → 等本案也廢棄</div></div>
+      </div>
+    </section>
+
+    <!-- 八、專業名詞解釋 -->
+    <section id="s-glossary">
+      <h2 class="sec-title">八、專業名詞解釋</h2>
+      <dl class="glossary">
+        <dt>假執行</dt>
+        <dd>本案判決尚未確定前，法院許可債權人得先依該判決強制執行之制度，目的在避免因訴訟延滯而使判決失去實益。</dd>
+
+        <dt>本案判決</dt>
+        <dd>就訴訟標的本身為裁判之判決，相對於「假執行宣告」這項附隨於本案判決的程序上宣告而言。</dd>
+
+        <dt>形成力</dt>
+        <dd>判決宣告或廢棄、變更所直接發生法律關係變動之效力，本條第1項假執行宣告之失效即為本案判決廢棄後形成力的當然結果，不待另行聲明。</dd>
+
+        <dt>處分權主義</dt>
+        <dd>訴訟程序之開始、範圍及終結由當事人自行決定，法院不得逾越當事人聲明範圍為裁判；本條第2項返還及賠償須「依被告之聲明」即為適例。</dd>
+
+        <dt>闡明義務</dt>
+        <dd>法院於訴訟進行中，對當事人不明瞭、不完足之聲明或陳述，應曉諭其敘明或補充之義務，目的在避免當事人因不諳程序而喪失實體上之利益。</dd>
+
+        <dt>供擔保免為假執行</dt>
+        <dd>依§392規定，被告得提供擔保，請求法院免為假執行，藉此在本案判決確定前，暫免受假執行之不利益，但須負擔提供擔保之成本。</dd>
+      </dl>
+    </section>
+
+    <!-- 九、速查卡 -->
+    <section id="s-quickcard">
+      <h2 class="sec-title">九、速查卡</h2>
+      <div class="quickcard">
+        <div class="deco">速</div>
+        <h3>§395 假執行宣告之失效與返還賠償</h3>
+        <ul>
+          <li>Ⅰ 失效：本案判決／宣告被廢棄或變更 → 於廢棄範圍內、宣示時起失效</li>
+          <li>Ⅱ 返還賠償：本案判決被廢棄 ＋ 被告聲明 → 命原告返還給付、賠償損害；被告未聲明，法院應告知</li>
+          <li>Ⅲ 銜接：僅假執行宣告被廢棄、本案判決未動 → 暫不適用Ⅱ，待本案判決日後也被廢棄或變更才適用</li>
+        </ul>
+        <div class="mnemonic">先看本案動沒動，本案未動先等等</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const links = document.querySelectorAll('.nav-link');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = '#' + entry.target.id;
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === id));
+      }
+    });
+  }, {rootMargin: '-20% 0px -70% 0px', threshold: 0});
+  sections.forEach(s => s && io.observe(s));
+
+  links.forEach(l => {
+    l.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(l.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
