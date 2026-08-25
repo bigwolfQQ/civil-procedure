@@ -161,11 +161,11 @@
     .seal-mark{position:static; margin:0 auto 16px; transform:rotate(-4deg);}
     .cover{padding-top:24px;}
   }
-  #mindmap-diagram{
+  #mindmap-diagram, #mindmap-diagram-full{
     background:var(--paper-card); border:1px solid var(--border); border-radius:8px;
-    padding:20px 10px; overflow-x:auto; text-align:center;
+    padding:20px 10px; overflow-x:auto; text-align:center; margin-bottom:20px;
   }
-  #mindmap-diagram svg{max-width:100%; height:auto;}
+  #mindmap-diagram svg, #mindmap-diagram-full svg{max-width:100%; height:auto;}
 </style>
 </head>
 <body>
@@ -197,7 +197,7 @@
         <h1>第 398 條</h1>
         <div class="sub">判決確定之時期</div>
         <div class="cover-meta">
-          <span class="ver-badge">v1.0</span>
+          <span class="ver-badge">v1.1</span>
           <span class="meta-date">2026-08-25</span>
           <span><img src="https://visitor-badge.laobi.icu/badge?page_id=bigwolfQQ.civil-procedure.398" alt="visitors" style="vertical-align:middle;height:14px;"></span>
         </div>
@@ -299,6 +299,8 @@
 
       <section id="mindmap">
         <h2 class="section-title">心智圖</h2>
+
+        <h3 class="sub-title">簡版</h3>
         <div id="mindmap-diagram">
           <pre class="mermaid">
 mindmap
@@ -316,6 +318,61 @@ mindmap
     核心概念
       形式確定力
       實質確定力
+          </pre>
+        </div>
+
+        <h3 class="sub-title">完整版</h3>
+        <div id="mindmap-diagram-full">
+          <pre class="mermaid">
+mindmap
+  root((民訴法第398條<br/>判決確定之時期))
+    得上訴之判決 398Ⅰ
+      送達 229條
+        判決正本送達
+        記載期間及上訴法院
+      上訴期間 440條
+        20日不變期間
+        自送達翌日起算
+      期間屆滿
+        本文：判決確定
+      期間內合法上訴
+        但書：阻其確定
+      期間內不合法上訴
+        逾期或不合程式
+        不生阻其確定效力
+        仍於屆滿時確定
+    不得上訴之判決 398Ⅱ
+      經言詞辯論
+        223Ⅰ 應宣示
+        宣示時確定
+      未經言詞辯論
+        223Ⅰ 應公告
+        公告時確定
+      特色
+        不待送達即確定
+    確定後之效果
+      既判力 400條
+        Ⅰ 訴訟標的有既判力
+        Ⅱ 抵銷主張有既判力
+      確定證明書 399條
+        當事人得聲請
+        原則第一審法院付與
+        7日內付與
+      再審之前提 496條
+        僅得對確定終局判決提起
+        13款法定事由
+    核心概念
+      形式確定力
+        不可爭力
+        398條規範對象
+      實質確定力
+        既判力
+        以形式確定力為前提
+      阻其確定
+        限「合法」上訴
+      送達與確定的區別
+        送達≠確定要件
+        僅為起算或證明之用
           </pre>
         </div>
       </section>
