@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民事訴訟法第398條｜判決確定之時期</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233b;
+    --indigo:#2c4a76;
+    --paper-outer:#f3ede0;
+    --paper-inner:#fbf8f1;
+    --paper-card:#fffdf8;
+    --seal:#9c2b3a;
+    --brass:#a9832f;
+    --border:#ddd3bf;
+    --ink-45: rgba(22,35,59,.45);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper-outer); color:var(--ink);
+    font-family:"Noto Sans TC",sans-serif; line-height:1.8;
+  }
+  h1,h2,h3,.serif{font-family:"Noto Serif TC",serif;}
+  a{color:var(--indigo);}
+  .layout{display:flex; max-width:1180px; margin:0 auto;}
+  nav.side{
+    width:240px; flex-shrink:0; position:sticky; top:0; align-self:flex-start;
+    height:100vh; overflow-y:auto; padding:28px 18px; background:var(--paper-outer);
+    border-right:1px solid var(--border);
+  }
+  nav.side .nav-title{font-size:12px; letter-spacing:.15em; color:var(--ink-45); margin-bottom:14px;}
+  nav.side a{
+    display:block; padding:8px 10px; font-size:14px; color:var(--ink);
+    text-decoration:none; border-radius:4px; margin-bottom:2px;
+  }
+  nav.side a.placeholder-link{color:var(--ink-45);}
+  nav.side a.active{background:var(--paper-card); color:var(--indigo); font-weight:700;}
+  main{flex:1; background:var(--paper-inner); box-shadow:-6px 0 14px rgba(22,35,59,.05); min-width:0;}
+  .container{max-width:820px; margin:0 auto; padding:48px 28px 100px;}
+  section{margin-bottom:64px; scroll-margin-top:20px;}
+  .cover{
+    text-align:center; padding:64px 20px 40px; position:relative;
+  }
+  .eyebrow{
+    display:inline-block; font-size:12px; letter-spacing:.2em; color:var(--indigo);
+    border:1px solid var(--indigo); padding:4px 14px; border-radius:20px; margin-bottom:18px;
+  }
+  .cover h1{font-size:32px; font-weight:900; margin:0 0 8px;}
+  .cover .sub{color:var(--ink-45); font-size:15px; margin-bottom:14px;}
+  .cover-meta{
+    display:flex; justify-content:center; gap:10px; flex-wrap:wrap; font-size:12px; margin-bottom:30px;
+  }
+  .cover-meta span{
+    border:1px solid var(--border); padding:3px 10px; border-radius:14px; color:var(--ink-45); background:var(--paper-card);
+  }
+  .ver-badge{border-color:var(--seal) !important; color:var(--seal) !important;}
+  .seal-mark{
+    position:absolute; top:36px; right:24px; width:78px; height:78px;
+    border:2px solid var(--seal); border-radius:6px; color:var(--seal);
+    display:flex; align-items:center; justify-content:center; transform:rotate(-8deg);
+    writing-mode:vertical-rl; font-family:"Noto Serif TC",serif; font-weight:900; font-size:20px;
+    letter-spacing:.15em; opacity:.85;
+  }
+  .toc{
+    background:var(--paper-card); border:1px solid var(--border); border-radius:8px;
+    padding:20px 24px; text-align:left; max-width:520px; margin:0 auto;
+  }
+  .toc h3{margin:0 0 10px; font-size:14px; color:var(--indigo);}
+  .toc ol{margin:0; padding-left:20px; font-size:14px; color:var(--ink);}
+  h2.section-title{
+    font-size:22px; font-weight:900; border-left:4px solid var(--brass); padding-left:14px; margin-bottom:22px;
+  }
+  h3.sub-title{font-size:16px; border-left:3px solid var(--indigo); padding-left:10px; margin:26px 0 12px;}
+  .article-box{
+    position:relative; background:var(--paper-card); border:1px solid var(--border);
+    border-left:3px solid var(--indigo); border-radius:6px; padding:22px 26px; overflow:hidden; margin-bottom:16px;
+  }
+  .article-box .watermark{
+    position:absolute; right:8px; bottom:-14px; font-size:110px; font-weight:900; color:var(--ink);
+    opacity:.06; font-family:"Noto Serif TC",serif; line-height:1; pointer-events:none;
+  }
+  .article-box p{margin:6px 0; position:relative; z-index:1;}
+  .article-box .item-num{color:var(--indigo); font-weight:700; margin-right:6px;}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:14px;}
+  th,td{border:1px solid var(--border); padding:10px 12px; text-align:left; vertical-align:top;}
+  th{background:var(--ink); color:var(--paper-inner);}
+  tr:nth-child(even) td{background:#f6f1e6;}
+  tr:nth-child(odd) td{background:#fffdf8;}
+  .conclude-pos{color:var(--ink); font-weight:700; background:linear-gradient(transparent 60%, rgba(169,131,47,.35) 60%);}
+  .conclude-neg{color:var(--seal); font-weight:700;}
+  .case-card, .essay-card{
+    background:var(--paper-card); border-radius:8px; border:1px solid var(--border);
+    box-shadow:0 1px 2px rgba(22,35,59,.08), 0 6px 16px rgba(22,35,59,.06);
+    margin-bottom:22px; overflow:hidden;
+  }
+  .case-card .card-head{background:var(--indigo); color:#fff; padding:10px 18px; font-weight:700; font-size:14px;}
+  .essay-card .card-head{background:var(--ink); color:#fff; padding:10px 18px; font-weight:700; font-size:14px;}
+  .case-card .card-body, .essay-card .card-body{padding:18px 22px;}
+  .tag{
+    display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin-left:8px;
+    background:rgba(255,255,255,.2); color:#fff;
+  }
+  details{margin-top:10px;}
+  summary{cursor:pointer; color:var(--indigo); font-weight:700; font-size:14px;}
+  .relation-wrap{margin:18px 0 6px; text-align:center;}
+  .relation-note{font-size:12px; color:var(--ink-45); margin-top:6px;}
+  .quickcard{
+    background:var(--ink); color:var(--paper-inner); border-radius:10px; padding:26px 28px;
+    position:relative; overflow:hidden;
+  }
+  .quickcard::after{
+    content:"速"; position:absolute; right:10px; bottom:-30px; font-size:170px; opacity:.08;
+    font-family:"Noto Serif TC",serif; font-weight:900;
+  }
+  .quickcard h3{margin-top:0; color:#fff; position:relative; z-index:1;}
+  .mnemonic{
+    background:var(--seal); color:#fff; display:inline-block; padding:10px 18px; border-radius:6px;
+    font-family:"Noto Serif TC",serif; font-weight:700; font-size:16px; position:relative; z-index:1; margin-top:10px;
+  }
+  .placeholder{
+    border:2px dashed var(--brass); border-radius:8px; padding:34px 20px; text-align:center;
+    background:repeating-linear-gradient(135deg, rgba(169,131,47,.05) 0 10px, transparent 10px 20px);
+    color:var(--ink-45);
+  }
+  .placeholder .badge{
+    display:inline-block; margin-top:10px; font-size:11px; padding:3px 10px; border-radius:10px;
+    background:var(--brass); color:#fff;
+  }
+  .source-block{
+    margin-top:14px; font-size:12px; color:var(--ink-45); border-top:1px dashed var(--border); padding-top:10px;
+  }
+  .verify-note{
+    font-size:12px; color:var(--seal); background:rgba(156,43,58,.06); border:1px dashed var(--seal);
+    border-radius:6px; padding:8px 12px; margin-top:10px;
+  }
+  .term-card{
+    background:var(--paper-card); border:1px solid var(--border); border-radius:6px; padding:14px 18px; margin-bottom:12px;
+  }
+  .term-card .term-name{font-family:"Noto Serif TC",serif; font-weight:700; color:var(--indigo); font-size:15px;}
+  .link-note{
+    border:1px dashed var(--border); border-radius:8px; padding:16px 20px; font-size:14px; margin-top:20px;
+  }
+  .link-note a{display:block; margin-top:6px;}
+  .topbar{
+    display:none; position:sticky; top:0; z-index:20; background:var(--paper-outer);
+    border-bottom:1px solid var(--border); overflow-x:auto; white-space:nowrap; padding:10px 12px;
+  }
+  .topbar a{
+    display:inline-block; font-size:13px; padding:6px 12px; margin-right:6px; border-radius:16px;
+    background:var(--paper-card); border:1px solid var(--border); text-decoration:none; color:var(--ink);
+  }
+  .topbar a.active{background:var(--indigo); color:#fff; border-color:var(--indigo);}
+  @media (max-width:980px){
+    nav.side{display:none;}
+    .topbar{display:block;}
+    .layout{display:block;}
+    .container{padding:24px 18px 80px;}
+    .seal-mark{position:static; margin:0 auto 16px; transform:rotate(-4deg);}
+    .cover{padding-top:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar"></div>
+
+<div class="layout">
+  <nav class="side" id="sidenav">
+    <div class="nav-title">目錄</div>
+    <a href="#cover">封面</a>
+    <a href="#art">條文原文</a>
+    <a href="#structure">條文結構</a>
+    <a href="#elements">要件逐項解析</a>
+    <a href="#terms">專業名詞解釋</a>
+    <a href="#doctrine">學說見解</a>
+    <a href="#practice">實務見解</a>
+    <a href="#cases">教學案例</a>
+    <a href="#essay">申論練習題</a>
+    <a href="#quickcard">速查卡</a>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <section id="cover" class="cover">
+        <div class="seal-mark">確定</div>
+        <div class="eyebrow">民事訴訟法・第一審程序・判決</div>
+        <h1>第 398 條</h1>
+        <div class="sub">判決確定之時期</div>
+        <div class="cover-meta">
+          <span class="ver-badge">v1.0</span>
+          <span class="meta-date">2026-08-25</span>
+          <span><img src="https://visitor-badge.laobi.icu/badge?page_id=bigwolfQQ.civil-procedure.398" alt="visitors" style="vertical-align:middle;height:14px;"></span>
+        </div>
+        <div class="toc">
+          <h3>本講義涵蓋</h3>
+          <ol>
+            <li>條文原文（398、399、400、440、223、229、496）</li>
+            <li>條文結構總覽</li>
+            <li>要件逐項解析</li>
+            <li>專業名詞解釋</li>
+            <li>學說見解（待核實原文）</li>
+            <li>實務見解（待核實原文）</li>
+            <li>教學案例 4 則</li>
+            <li>申論練習題 4 題（AI出題）</li>
+            <li>速查卡</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="art">
+        <h2 class="section-title">一、條文原文</h2>
+
+        <h3 class="sub-title">民事訴訟法第398條（判決確定之時期）【本條】</h3>
+        <div class="article-box">
+          <span class="watermark">398</span>
+          <p><span class="item-num">Ⅰ</span>判決，於上訴期間屆滿時確定。但於上訴期間內有合法之上訴者，阻其確定。</p>
+          <p><span class="item-num">Ⅱ</span>不得上訴之判決，於宣示時確定；不宣示者，於公告時確定。</p>
+        </div>
+
+        <h3 class="sub-title">關聯條文</h3>
+        <div class="article-box">
+          <span class="watermark">440</span>
+          <p>第440條（上訴期間）：提起上訴，應於第一審判決送達後二十日之不變期間內為之。但宣示或公告後送達前之上訴，亦有效力。</p>
+        </div>
+        <div class="article-box">
+          <span class="watermark">223</span>
+          <p><span class="item-num">Ⅰ</span>判決應公告之；經言詞辯論之判決，應宣示之，但當事人明示於宣示期日不到場或於宣示期日未到場者，不在此限。</p>
+          <p><span class="item-num">Ⅱ</span>宣示判決，應於言詞辯論終結之期日或辯論終結時指定之期日為之。</p>
+          <p><span class="item-num">Ⅲ</span>前項指定之宣示期日，自辯論終結時起，獨任審判者，不得逾二星期；合議審判者，不得逾三星期。但案情繁雜或有特殊情形者，不在此限。</p>
+          <p><span class="item-num">Ⅳ</span>前項判決之宣示，應本於已作成之判決原本為之。</p>
+        </div>
+        <div class="article-box">
+          <span class="watermark">229</span>
+          <p><span class="item-num">Ⅰ</span>判決，應以正本送達於當事人。</p>
+          <p><span class="item-num">Ⅱ</span>前項送達，自法院書記官收領判決原本時起，至遲不得逾十日。</p>
+          <p><span class="item-num">Ⅲ</span>對於判決得上訴者，應於送達當事人之正本內，記載其期間及提出上訴狀之法院。</p>
+        </div>
+        <div class="article-box">
+          <span class="watermark">399</span>
+          <p><span class="item-num">Ⅰ</span>當事人得聲請法院，付與判決確定證明書。</p>
+          <p><span class="item-num">Ⅱ</span>判決確定證明書，由第一審法院付與之。但卷宗在上級法院者，由上級法院付與之。</p>
+          <p><span class="item-num">Ⅲ</span>判決確定證明書，應於聲請後七日內付與之。</p>
+          <p><span class="item-num">Ⅳ</span>前三項之規定，於裁定確定證明書準用之。</p>
+        </div>
+        <div class="article-box">
+          <span class="watermark">400</span>
+          <p><span class="item-num">Ⅰ</span>除別有規定外，確定之終局判決就經裁判之訴訟標的，有既判力。</p>
+          <p><span class="item-num">Ⅱ</span>主張抵銷之請求，其成立與否經裁判者，以主張抵銷之額為限，有既判力。</p>
+        </div>
+        <div class="article-box">
+          <span class="watermark">496</span>
+          <p><span class="item-num">Ⅰ</span>有下列各款情形之一者，得以再審之訴對於確定終局判決聲明不服。但當事人已依上訴主張其事由或知其事由而不為主張者，不在此限：一、適用法規顯有錯誤者。二、判決理由與主文顯有矛盾者。三、判決法院之組織不合法者。四、依法律或裁判應迴避之法官參與裁判者。五、當事人於訴訟未經合法代理者。六、當事人知他造之住居所，指為所在不明而與涉訟者。但他造已承認其訴訟程序者，不在此限。七、參與裁判之法官關於該訴訟違背職務犯刑事上之罪者，或關於該訴訟違背職務受懲戒處分，足以影響原判決者。八、當事人之代理人或他造或其代理人關於該訴訟有刑事上應罰之行為，影響於判決者。九、為判決基礎之證物係偽造或變造者。十、證人、鑑定人、通譯、當事人或法定代理人經具結後，就為判決基礎之證言、鑑定、通譯或有關事項為虛偽陳述者。十一、為判決基礎之民事、刑事、行政訴訟判決及其他裁判或行政處分，依其後之確定裁判或行政處分已變更者。十二、當事人發現就同一訴訟標的在前已有確定判決或和解、調解或得使用該判決或和解、調解者。十三、當事人發現未經斟酌之證物或得使用該證物者。但以如經斟酌可受較有利益之裁判者為限。</p>
+          <p><span class="item-num">Ⅱ</span>前項第七款至第十款情形，以宣告有罪之判決或處罰鍰之裁定已確定，或因證據不足以外之理由，而不能為有罪之確定判決或罰鍰之確定裁定者為限，得提起再審之訴。</p>
+          <p><span class="item-num">Ⅲ</span>第二審法院就該事件已為本案判決者，對於第一審法院之判決不得提起再審之訴。</p>
+        </div>
+      </section>
+
+      <section id="structure">
+        <h2 class="section-title">二、條文結構總覽</h2>
+        <table>
+          <tr><th>類型</th><th>確定要件</th><th>確定時點</th><th>依據</th></tr>
+          <tr>
+            <td>得上訴之判決</td>
+            <td>上訴期間（20日不變期間）屆滿，且期間內無合法之上訴</td>
+            <td class="conclude-pos">上訴期間屆滿時</td>
+            <td>398Ⅰ、440</td>
+          </tr>
+          <tr>
+            <td>得上訴之判決，但有合法上訴</td>
+            <td>期間內提起合法之上訴</td>
+            <td class="conclude-neg">不確定（阻其確定）</td>
+            <td>398Ⅰ但書</td>
+          </tr>
+          <tr>
+            <td>不得上訴之判決，經宣示</td>
+            <td>依223Ⅰ應宣示之判決（經言詞辯論）</td>
+            <td class="conclude-pos">宣示時</td>
+            <td>398Ⅱ前段、223Ⅰ</td>
+          </tr>
+          <tr>
+            <td>不得上訴之判決，未宣示</td>
+            <td>依223Ⅰ應公告之判決（未經言詞辯論）</td>
+            <td class="conclude-pos">公告時</td>
+            <td>398Ⅱ後段、223Ⅰ</td>
+          </tr>
+        </table>
+        <p style="font-size:14px;color:var(--ink-45);">本條為判決「形式確定力」發生時點之規定，是既判力（400條，實質確定力）發生的前提要件；判決須先確定，才會產生既判力與可據以聲請確定證明書（399條）、提起再審（496條，須以「確定終局判決」為對象）之效果。</p>
+      </section>
+
+      <section id="elements">
+        <h2 class="section-title">三、要件逐項解析</h2>
+
+        <h3 class="sub-title">(一) 第1項：得上訴判決之確定</h3>
+        <p><strong>要件一：判決須經合法送達，上訴期間已開始起算。</strong>依第440條，上訴期間為第一審判決送達後20日之不變期間；依第229條，送達以判決正本為之，正本並應記載期間及提出上訴狀之法院，此為當事人知悉期間之保障，也是「不變期間」得以公平起算的前提。</p>
+        <p><strong>要件二：上訴期間屆滿。</strong>不變期間屆滿即生確定效力，不因當事人是否實際收受送達或有無正當理由遲誤而延展（遲誤不變期間之救濟為聲請回復原狀，非本條規範範圍）。</p>
+        <p><strong>要件三（消極要件）：期間內無「合法」之上訴。</strong>條文但書「阻其確定」以「合法」上訴為限。若上訴不合法（如逾期提起、不合程式且未補正、非有上訴權人提起），該不合法之上訴並不生阻其確定之效力，判決仍於期間屆滿時確定，僅生法院應以裁定駁回該不合法上訴之問題。</p>
+
+        <h3 class="sub-title">(二) 第2項：不得上訴判決之確定</h3>
+        <p><strong>前提：該判決依法不得上訴。</strong>本項僅規範「已確定屬於不得上訴」之判決類型應於何時確定，本身不處理何種判決不得上訴（此需依其他條文個別判斷，例如終審法院之判決）。</p>
+        <p><strong>要件一：經言詞辯論者，應宣示。</strong>依223條Ⅰ，經言詞辯論之判決原則上應宣示，宣示時即生確定效力，不待送達。</p>
+        <p><strong>要件二：不經言詞辯論或依223條Ⅰ但書未宣示者，應公告。</strong>此時判決於公告時確定，同樣不待送達完成。</p>
+        <p style="font-size:14px;color:var(--ink-45);">值得注意：不論第1項或第2項，「確定」與「送達」在概念上是分離的——送達只是使當事人知悉判決內容並起算上訴期間（或作為證明宣示、公告日期之用），本身並非確定要件；第2項判決甚至於當事人尚未收受送達正本前，即已因宣示或公告而確定。</p>
+      </section>
+
+      <section id="terms">
+        <h2 class="section-title">四、專業名詞解釋</h2>
+
+        <div class="term-card">
+          <div class="term-name">形式確定力（不可爭力）</div>
+          <p style="margin:6px 0 0;">指判決不得再依通常上訴程序聲明不服的效力。398條規範的即為形式確定力發生之時點。形式確定力發生後，法院及當事人均受拘束，非經法定程序（如再審）不得任意變更。</p>
+        </div>
+        <div class="term-card">
+          <div class="term-name">實質確定力（既判力）</div>
+          <p style="margin:6px 0 0;">指確定判決就經裁判之訴訟標的，對當事人與法院發生一事不再理、禁止矛盾裁判之拘束效力（400條）。以形式確定力發生為前提——判決須先「確定」，才會產生既判力。</p>
+        </div>
+        <div class="term-card">
+          <div class="term-name">不變期間</div>
+          <p style="margin:6px 0 0;">法律明定不得由法院裁量伸縮之法定期間，上訴期間（440條之20日）即屬之。當事人僅得依聲請回復原狀之程序救濟遲誤，法院本身不得延展。</p>
+        </div>
+        <div class="term-card">
+          <div class="term-name">阻其確定</div>
+          <p style="margin:6px 0 0;">指合法上訴之提起，使判決不因上訴期間屆滿而確定的效果。僅「合法」之上訴具此效力；不合法之上訴不生阻其確定之作用。</p>
+        </div>
+        <div class="term-card">
+          <div class="term-name">宣示／公告</div>
+          <p style="margin:6px 0 0;">宣示指法院於言詞辯論終結之期日或指定期日當庭朗讀主文並宣布判決內容；公告則指未經言詞辯論之判決，由法院以公告方式使外界知悉。兩者均為使判決對外發生效力之法定方式，223條定其程序，398條Ⅱ則以此二者作為不得上訴判決之確定基準時點。</p>
+        </div>
+
+        <div class="verify-note">名詞解釋為講義編寫時之整理說明，非逐字引用特定學者或辭典原文，供理解概念用；若需嚴謹學術定義，仍建議對照司法院裁判書用語辭典或教科書原文。</div>
+      </section>
+
+      <section id="doctrine">
+        <h2 class="section-title">五、學說見解</h2>
+        <div class="verify-note">以下見解整理自網路搜尋結果之摘要轉述，尚未逐字核對原始期刊／專書全文，出處頁碼亦待補齊，請於引用前自行查證原文。</div>
+
+        <table>
+          <tr><th>學者</th><th>見解摘要</th><th>出處</th></tr>
+          <tr>
+            <td>姜世明（政治大學法學院教授）</td>
+            <td>將確定判決效力區分為形式確定力（不可爭力）與實質確定力（既判力），並整理比較法上（德國學說）對形式確定力發生時點的不同見解，作為理解我國第398條規範定位的參照架構</td>
+            <td>〈確定判決及裁定效力之問題提示〉，期刊/專書名稱與頁碼待查證</td>
+          </tr>
+        </table>
+
+        <div class="placeholder">
+          <div>📖</div>
+          <div>其餘學者（如吳明軒、陳計男、姚瑞光等傳統教科書）對第398條逐項要件（尤其「合法上訴」之判斷標準、期間起算爭議）之見解尚未加入</div>
+          <span class="badge">待補充</span>
+        </div>
+      </section>
+
+      <section id="practice">
+        <h2 class="section-title">六、實務見解</h2>
+        <div class="verify-note">以下函釋與判例整理自搜尋摘要，字號、要旨尚未逐字核對司法院原始資料庫全文，請至 judgment.judicial.gov.tw 或 law.moj.gov.tw 查詢原文後再正式引用。</div>
+
+        <table>
+          <tr><th>類型</th><th>字號 / 內容</th><th>來源</th></tr>
+          <tr>
+            <td>司法院秘書長函釋</td>
+            <td>秘台廳民一字第0930012972號：訴訟事件經最高法院判決上訴駁回或依規定自為判決，因不得再上訴，其判決如經言詞辯論者，應於宣示時確定；如未經言詞辯論者，則於公告時確定。當事人得依399條第1項聲請法院付與判決確定證明書，以為判決宣示或公告日期之證明。</td>
+            <td>可至司法院裁判書查詢系統（https://judgment.judicial.gov.tw/）或法源法律網查詢原文核實</td>
+          </tr>
+          <tr>
+            <td>最高法院判例（與400條既判力範圍相關）</td>
+            <td>73年台上字第3292號：確定判決之既判力，惟於判決主文所判斷之訴訟標的，始可發生；訴訟標的以外之事項，縱令判決理由中對之有所判斷，除400條Ⅱ所定情形外，尚不能因該判決已確定而認此項判斷有既判力</td>
+            <td>可至司法院裁判書查詢系統或全國法規資料庫查詢原文核實；並請注意「判例」制度已於民國108年法院組織法修正後不再選編，舊判例現僅作為裁判先例參考，不具過去之拘束力</td>
+          </tr>
+        </table>
+
+        <div class="placeholder">
+          <div>⚖️</div>
+          <div>本條（§398）目前查無大法官解釋或憲法法庭判決，理由為：本條屬程序技術性規定（判決確定時點之計算），未見有人以此聲請違憲審查</div>
+          <span class="badge">查無</span>
+        </div>
+      </section>
+
+      <section id="cases">
+        <h2 class="section-title">七、教學案例</h2>
+        <p style="font-size:13px;color:var(--ink-45);">以下案例為教學用途，人物、案號、日期均為虛構，僅用於輔助理解第398條之適用。</p>
+
+        <div class="case-card">
+          <div class="card-head">案例一：基本型——期間屆滿未上訴<span class="tag">教學用途</span></div>
+          <div class="card-body">
+            <p>甲向乙請求返還借款100萬元，一審法院於2026年3月2日判決甲勝訴，判決正本於2026年3月10日合法送達乙。乙收受判決後未提起上訴。試問：本件判決於何時確定？</p>
+            <p><strong>分析：</strong>依第440條，上訴期間為判決送達後20日之不變期間，自送達翌日（3月11日）起算20日，屆滿日為3月30日。乙於期間內未提起合法上訴，依第398條第1項本文，判決於<span class="conclude-pos">上訴期間屆滿時（3月30日）確定</span>。</p>
+            <p><strong>結論：</strong>本件判決於2026年3月30日確定，甲得依399條聲請確定證明書。</p>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="card-head">案例二：合法上訴阻其確定 vs 不合法上訴<span class="tag">教學用途</span></div>
+          <div class="card-body">
+            <p>延續案例一，若乙於3月25日委任律師依法定程式提起上訴，其後因故於4月上旬撤回上訴，判決確定時點為何？又若乙係於期間屆滿後之4月5日始提起上訴（逾期），判決確定時點又為何？</p>
+            <p><strong>分析（合法上訴後撤回）：</strong>乙3月25日提起之上訴符合期間與程式，屬合法上訴，依398條第1項但書於提起時即阻其確定；判決不因上訴期間屆滿（3月30日）而確定。嗣後撤回上訴，判決效力回復第一審判決，此時判決確定時點另依撤回上訴之效果認定（非本條398條直接規範範圍），一般認為以撤回上訴之時起，第一審判決確定。</p>
+            <p><strong>分析（逾期上訴）：</strong>乙4月5日提起之上訴已逾20日不變期間，屬不合法之上訴，依398條第1項但書之反面解釋，不合法之上訴不生阻其確定之效力。判決仍於3月30日（期間屆滿時）確定，法院應另以裁定駁回該逾期上訴。</p>
+            <p><strong>結論：</strong>「合法」二字是關鍵要件——只有合法上訴才阻其確定，逾期或不合程式之上訴不影響判決依398條第1項本文於期間屆滿時確定的效果。</p>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="card-head">案例三：不得上訴判決——宣示與公告之別<span class="tag">教學用途</span></div>
+          <div class="card-body">
+            <p>丙與丁間房屋所有權移轉登記事件，歷經一、二審後上訴第三審，最高法院審理後認上訴為無理由，依法不得再行上訴。試比較以下兩種情形判決之確定時點：情形A，最高法院經言詞辯論後，於6月10日當庭宣示判決；情形B，最高法院未行言詞辯論，判決於6月20日公告。</p>
+            <p><strong>分析：</strong>兩案均屬「不得上訴之判決」，適用398條第2項。情形A經言詞辯論，依223條Ⅰ應宣示，依398條Ⅱ前段，判決於<span class="conclude-pos">宣示時（6月10日）確定</span>。情形B未經言詞辯論，依223條Ⅰ但書應公告，依398條Ⅱ後段，判決於<span class="conclude-pos">公告時（6月20日）確定</span>。</p>
+            <p><strong>結論：</strong>兩種情形皆不待判決正本送達當事人即已確定，此與第1項「送達後20日」之計算方式截然不同，是本條第2項的核心特色，也是實務上最容易與第1項混淆之處。</p>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="card-head">案例四：共同被告一部上訴，確定範圍如何認定<span class="tag">教學用途</span></div>
+          <div class="card-body">
+            <p>原告甲同時起訴被告乙、被告丙，主張乙、丙就同一買賣契約負連帶給付貨款之責。一審法院判決乙、丙均應連帶給付甲50萬元，判決正本同日送達乙、丙。乙於期間內提起合法上訴，丙則未提起任何上訴。試問：丙敗訴部分是否因乙已合法上訴而阻其確定？</p>
+
+            <div class="relation-wrap">
+              <svg viewBox="0 0 640 300" width="100%" style="max-width:560px;">
+                <rect x="30" y="30" width="180" height="70" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="1.5"/>
+                <text x="120" y="58" text-anchor="middle" font-family="Noto Serif TC" font-weight="700" font-size="15" fill="#16233b">原告 甲</text>
+                <text x="120" y="78" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#5b6472">主張連帶給付貨款</text>
+
+                <rect x="430" y="10" width="180" height="70" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="1.5"/>
+                <text x="520" y="38" text-anchor="middle" font-family="Noto Serif TC" font-weight="700" font-size="15" fill="#16233b">被告 乙</text>
+                <text x="520" y="58" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#9c2b3a">已合法上訴</text>
+
+                <rect x="430" y="200" width="180" height="70" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="1.5"/>
+                <text x="520" y="228" text-anchor="middle" font-family="Noto Serif TC" font-weight="700" font-size="15" fill="#16233b">被告 丙</text>
+                <text x="520" y="248" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#9c2b3a">未上訴（爭點所在）</text>
+
+                <line x1="210" y1="55" x2="430" y2="45" stroke="#2c4a76" stroke-width="1.5"/>
+                <text x="300" y="35" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#2c4a76">連帶請求50萬</text>
+
+                <line x1="210" y1="70" x2="430" y2="230" stroke="#2c4a76" stroke-width="1.5"/>
+                <text x="300" y="150" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#2c4a76">連帶請求50萬</text>
+
+                <path d="M520,80 C560,140 560,170 520,200" fill="none" stroke="#a9832f" stroke-width="1.5" stroke-dasharray="5 5"/>
+                <text x="600" y="140" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#a9832f">丙部分是否阻其確定？</text>
+              </svg>
+              <div class="relation-note">爭點：乙合法上訴之效力，是否及於未上訴之丙敗訴部分</div>
+            </div>
+
+            <p><strong>分析：</strong>398條第1項但書之「阻其確定」，其效力範圍原則上僅及於上訴人聲明不服之範圍。乙、丙雖同為連帶債務人，但訴訟標的（甲對乙之請求權、甲對丙之請求權）在通常共同訴訟下原則上各自獨立（非必要共同訴訟），乙提起上訴僅生「乙敗訴部分」阻其確定之效力。丙未提起上訴，其敗訴部分不因乙之上訴而當然阻其確定，仍依398條第1項本文於上訴期間屆滿時單獨確定。</p>
+            <p><strong>結論：</strong>丙敗訴部分於上訴期間屆滿時即已確定，甲得就丙部分單獨聲請確定證明書並據以執行；乙部分則因合法上訴繫屬於第二審，尚未確定。（若乙、丙間屬必要共同訴訟，效力是否及於全體則另有特別規定，不在本條398條規範範圍，屬其他條文之討論。）</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="essay">
+        <h2 class="section-title">八、申論練習題與模擬解答</h2>
+        <p style="font-size:13px;color:var(--ink-45);">以下題目與解答由 AI 依使用者授權自行出題，非取自特定考試題庫，僅供練習參考。</p>
+
+        <div class="essay-card">
+          <div class="card-head">練習題一<span class="tag">AI出題</span></div>
+          <div class="card-body">
+            <p><strong>題目：</strong>甲對乙提起給付貨款訴訟，一審判決甲勝訴，判決正本於某年5月5日送達乙，乙未提起上訴。試附理由說明本件判決確定之時點，並說明其法律效果。</p>
+            <details>
+              <summary>模擬解答</summary>
+              <p>依民事訴訟法第440條，提起上訴應於第一審判決送達後20日之不變期間內為之。本件判決正本於5月5日送達乙，期間自送達翌日即5月6日起算，屆滿日為5月25日。乙於期間內未提起任何上訴，依第398條第1項本文規定，判決於上訴期間屆滿時確定，即本件判決於5月25日確定。判決確定後，依第400條第1項，就經裁判之訴訟標的發生既判力，甲、乙及法院均受拘束，不得就同一訴訟標的另行起訴或為相反主張；甲並得依第399條第1項規定，向第一審法院聲請付與判決確定證明書，以作為聲請強制執行之依據。</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="essay-card">
+          <div class="card-head">練習題二<span class="tag">AI出題</span></div>
+          <div class="card-body">
+            <p><strong>題目：</strong>被告丙於上訴期間屆滿後始提起上訴，法院應如何處理？此逾期上訴是否影響原判決確定之時點？試申論之。</p>
+            <details>
+              <summary>模擬解答</summary>
+              <p>民事訴訟法第398條第1項但書規定，僅「合法」之上訴始生阻其確定之效力。丙於上訴期間屆滿後始提起上訴，已違反第440條所定20日不變期間，其上訴程式不合法。此不合法之上訴不具阻其確定之效力，原判決仍依第398條第1項本文於上訴期間屆滿時確定，不因丙嗣後提起之逾期上訴而受影響。就程序處理而言，第二審法院應依法以裁定駁回該不合法之上訴，不進行實體審理。丙若欲救濟，僅得於符合聲請回復原狀要件時（如因天災或其他不應歸責於己之事由遲誤不變期間），依法定程序聲請回復原狀，另行主張上訴權利，此屬另一制度，非第398條本身所規範之效果。</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="essay-card">
+          <div class="card-head">練習題三<span class="tag">AI出題</span></div>
+          <div class="card-body">
+            <p><strong>題目：</strong>最高法院就某上訴事件為駁回上訴之判決，因該判決依法不得再行上訴。試說明：若該判決經言詞辯論，與未經言詞辯論兩種情形，判決確定之時點有何不同？其理由為何？</p>
+            <details>
+              <summary>模擬解答</summary>
+              <p>依民事訴訟法第398條第2項，不得上訴之判決，於宣示時確定；不宣示者，於公告時確定。而依第223條第1項，經言詞辯論之判決原則上應宣示，未經言詞辯論之判決則應公告。故若該最高法院判決經言詞辯論，依第398條第2項前段，應於宣示時確定；若未經言詞辯論，依同項後段，則於公告時確定。其理由在於：不得上訴之判決已無經由上訴救濟予以推翻之可能，法律乃無須以「送達後期間屆滿」作為確定基準，而逕以判決對外發生效力之時點（宣示或公告）作為確定時點，使判決效力儘早發生，避免程序久懸不決；此與第1項規定得上訴判決須待送達後上訴期間屆滿始確定，用意在保障當事人上訴權益，二者立法考量並不相同。</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="essay-card">
+          <div class="card-head">練習題四（綜合題）<span class="tag">AI出題</span></div>
+          <div class="card-body">
+            <p><strong>題目：</strong>甲對乙之給付訴訟，一審判決甲勝訴確定後，甲已取得確定證明書並聲請強制執行。嗣後乙發現該判決之訴訟程序中，法院組織有不合法之情事。試問乙得否請求救濟？其與第398條、第400條、第496條之關係為何？</p>
+            <details>
+              <summary>模擬解答</summary>
+              <p>本件判決已確定（第398條），並依第400條第1項就經裁判之訴訟標的發生既判力，甲、乙及法院均受拘束，乙不得循通常上訴程序請求救濟。惟依第496條第1項第3款規定，判決法院之組織不合法者，得作為再審事由，對於確定終局判決提起再審之訴，此為法律就確定判決另設之非常救濟途徑，目的在於平衡法安定性（既判力）與個案實體正義。乙得於符合第496條所定要件（包括第1項但書：非乙已依上訴主張其事由或知其事由而不為主張者）之情形下，以「法院組織不合法」為由提起再審之訴，請求原確定判決法院（或依規定有管轄權之法院）重新審理。此題可見第398條（判決確定之時點）、第400條（確定後之既判力效果）與第496條（確定判決之非常救濟）三者環環相扣的體系關係：判決須先確定，始生既判力；而既判力雖具安定性，法律仍容許於例外法定事由下透過再審程序予以推翻。</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="quickcard">
+        <h2 class="section-title">九、速查卡</h2>
+        <div class="quickcard">
+          <h3>民事訴訟法第398條・判決確定之時期</h3>
+          <table style="background:transparent;">
+            <tr style="background:transparent;"><td style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">得上訴判決</td><td style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">上訴期間（20日）屆滿時確定；合法上訴阻其確定</td></tr>
+            <tr style="background:transparent;"><td style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">不得上訴判決</td><td style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">經言詞辯論者，宣示時確定；未經言詞辯論者，公告時確定</td></tr>
+            <tr style="background:transparent;"><td style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">關鍵字</td><td style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25);">合法上訴才阻其確定；確定與送達是兩件事</td></tr>
+          </table>
+          <div class="mnemonic">得訴屆滿、合訴則阻；不訴宣公，即刻確定</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll("main section[id]");
+  const sideLinks = document.querySelectorAll("nav.side a");
+  const topbar = document.getElementById("topbar");
+  sideLinks.forEach(a=>{
+    const clone = a.cloneNode(true);
+    topbar.appendChild(clone);
+  });
+  const topLinks = document.querySelectorAll(".topbar a");
+
+  function setActive(id){
+    [...sideLinks, ...topLinks].forEach(a=>{
+      a.classList.toggle("active", a.getAttribute("href") === "#"+id);
+    });
+  }
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ setActive(entry.target.id); }
+    });
+  }, { rootMargin: "-20% 0px -70% 0px" });
+  sections.forEach(s=>observer.observe(s));
+
+  [...sideLinks, ...topLinks].forEach(a=>{
+    a.addEventListener("click", (e)=>{
+      e.preventDefault();
+      const id = a.getAttribute("href").slice(1);
+      document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    });
+  });
+</script>
+</body>
+</html>
