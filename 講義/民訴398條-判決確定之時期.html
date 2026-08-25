@@ -161,6 +161,11 @@
     .seal-mark{position:static; margin:0 auto 16px; transform:rotate(-4deg);}
     .cover{padding-top:24px;}
   }
+  #mindmap-diagram{
+    background:var(--paper-card); border:1px solid var(--border); border-radius:8px;
+    padding:20px 10px; overflow-x:auto; text-align:center;
+  }
+  #mindmap-diagram svg{max-width:100%; height:auto;}
 </style>
 </head>
 <body>
@@ -173,6 +178,7 @@
     <a href="#cover">封面</a>
     <a href="#art">條文原文</a>
     <a href="#structure">條文結構</a>
+    <a href="#mindmap">心智圖</a>
     <a href="#elements">要件逐項解析</a>
     <a href="#terms">專業名詞解釋</a>
     <a href="#doctrine">學說見解</a>
@@ -289,6 +295,29 @@
           </tr>
         </table>
         <p style="font-size:14px;color:var(--ink-45);">本條為判決「形式確定力」發生時點之規定，是既判力（400條，實質確定力）發生的前提要件；判決須先確定，才會產生既判力與可據以聲請確定證明書（399條）、提起再審（496條，須以「確定終局判決」為對象）之效果。</p>
+      </section>
+
+      <section id="mindmap">
+        <h2 class="section-title">心智圖</h2>
+        <div id="mindmap-diagram">
+          <pre class="mermaid">
+mindmap
+  root((第398條<br/>判決確定之時期))
+    得上訴判決 Ⅰ
+      期間屆滿即確定
+      合法上訴阻其確定
+    不得上訴判決 Ⅱ
+      經宣示即確定
+      未宣示則公告時確定
+    確定後效果
+      既判力 400條
+      確定證明書 399條
+      得提再審 496條
+    核心概念
+      形式確定力
+      實質確定力
+          </pre>
+        </div>
       </section>
 
       <section id="elements">
@@ -513,6 +542,23 @@
   </main>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "base",
+    themeVariables: {
+      primaryColor: "#fffdf8",
+      primaryTextColor: "#16233b",
+      primaryBorderColor: "#2c4a76",
+      lineColor: "#a9832f",
+      secondaryColor: "#f6f1e6",
+      tertiaryColor: "#fbf8f1",
+      fontFamily: "Noto Sans TC, sans-serif"
+    },
+    mindmap: { padding: 12 }
+  });
+</script>
 <script>
   const sections = document.querySelectorAll("main section[id]");
   const sideLinks = document.querySelectorAll("nav.side a");
