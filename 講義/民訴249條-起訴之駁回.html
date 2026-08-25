@@ -100,6 +100,29 @@ tbody td{padding:10px 12px;border-bottom:1px solid var(--border);}
 tbody tr:nth-child(even){background:#f6f1e6;}
 tbody tr:nth-child(odd){background:var(--paper-card);}
 .neg{color:var(--seal);font-weight:700;}
+.mm-wrap{margin-top:22px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--paper-inner,#fbf8f1);}
+.mm-head{background:var(--ink);color:var(--paper-body);padding:14px 20px;font-family:'Noto Serif TC',serif;font-weight:700;font-size:16px;}
+.mm-head span{display:block;font-family:'Noto Sans TC',sans-serif;font-weight:400;font-size:12px;margin-top:4px;color:rgba(251,248,241,.75);}
+.mm-body{padding:20px;}
+.mm-center{text-align:center;margin:0 auto 20px;max-width:400px;background:var(--seal);color:#fff;border-radius:12px;padding:12px 16px;font-family:'Noto Serif TC',serif;font-weight:700;font-size:14px;}
+.mm-center small{display:block;font-family:'Noto Sans TC',sans-serif;font-weight:400;font-size:11.5px;margin-top:5px;opacity:.85;}
+.mm-branches{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.mm-branch{flex:1 1 340px;min-width:260px;background:#fffdf8;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.mm-branch-head{background:var(--indigo);color:#fbf8f1;padding:10px 14px;font-family:'Noto Serif TC',serif;font-weight:700;font-size:14px;}
+.mm-branch-body{padding:12px 14px 14px;}
+.mm-leaf{background:#fffdf8;border:1px solid var(--border);border-left:3px solid var(--indigo);border-radius:6px;padding:9px 11px;margin-bottom:9px;font-size:13px;line-height:1.6;}
+.mm-leaf:last-child{margin-bottom:0;}
+.mm-leaf.warn{border-left-color:var(--seal);}
+.mm-leaf .mm-tag{display:inline-block;font-family:'Noto Serif TC',serif;font-weight:700;font-size:11px;color:var(--indigo);background:rgba(44,74,118,.08);border-radius:9px;padding:1px 8px;margin-bottom:5px;}
+.mm-leaf.warn .mm-tag{color:var(--seal);background:rgba(156,43,58,.08);}
+.mm-leaf .mm-kw{color:var(--seal);font-weight:700;}
+.mm-relation{margin-top:18px;background:var(--ink);color:#fbf8f1;border-radius:10px;padding:16px 18px;}
+.mm-relation h4{font-family:'Noto Serif TC',serif;font-size:14px;margin:0 0 10px;color:var(--brass);}
+.mm-relation ol{margin:0;padding-left:18px;font-size:12.5px;line-height:1.8;}
+.mm-relation li{margin-bottom:5px;}
+.src-block{margin-top:14px;padding:10px 14px;border:1px dashed var(--border);border-radius:6px;background:#f6f1e6;font-size:13px;color:var(--ink-65);line-height:1.7;}
+.src-block a{color:var(--indigo);}
+.exam-tag{display:inline-block;margin-left:8px;font-size:11px;font-weight:400;background:var(--seal);color:#fff;padding:2px 8px;border-radius:10px;vertical-align:middle;}
 .pos{color:var(--ink);font-weight:700;background-image:linear-gradient(transparent 65%, rgba(169,131,47,.35) 0);}
 
 /* ---------- CASE / QUIZ CARD ---------- */
@@ -203,8 +226,8 @@ tbody tr:nth-child(odd){background:var(--paper-card);}
       <h1>民事訴訟法第249條</h1>
       <div class="subtitle">起訴之駁回──裁定駁回與判決駁回的雙軌審查機制</div>
       <div class="cover-meta">
-        <span class="ver-badge">v1.1</span>
-        <span class="meta-date">建立日期 2026-08-25（更新 2026-08-25）</span>
+        <span class="ver-badge">v1.3</span>
+        <span class="meta-date">建立日期 2026-08-25（更新 2026-08-26）</span>
         <span class="visitor-badge"><img src="https://visitor-badge.laobi.icu/badge?page_id=mjib007.civil-procedure.249" alt="visitor badge"></span>
       </div>
       <div class="cover-toc">
@@ -369,7 +392,7 @@ tbody tr:nth-child(odd){background:var(--paper-card);}
       <table>
         <thead><tr><th>款次</th><th>事由</th><th>關聯條文</th><th>性質</th></tr></thead>
         <tbody>
-          <tr><td>①</td><td>訴訟事件不屬普通法院審判權，不能依法移送</td><td>—</td><td>審判權要件</td></tr>
+          <tr><td>①</td><td>訴訟事件不屬普通法院審判權，不能依法移送</td><td>法組§7-2、§7-3</td><td>審判權要件</td></tr>
           <tr><td>②</td><td>不屬受訴法院管轄而不能為移送裁定</td><td>§28</td><td>管轄要件</td></tr>
           <tr><td>③</td><td>原告或被告無當事人能力</td><td>§40</td><td>當事人能力</td></tr>
           <tr><td>④</td><td>原告或被告無訴訟能力，未由法定代理人合法代理</td><td>§45、§46</td><td>訴訟能力</td></tr>
@@ -380,6 +403,48 @@ tbody tr:nth-child(odd){background:var(--paper-card);}
         </tbody>
       </table>
       <p style="margin-top:10px;">第⑥款實務上常作為「概括條款」使用：學說見解認為，當事人適格或欠缺權利保護必要之情形，亦可能被涵括於本款「其他要件」之欠缺（詳見五、學說見解表格中之最高法院31年決議見解）。</p>
+
+      <div class="mm-wrap">
+        <div class="mm-head">
+          關聯條文心智圖・法院組織法 § 7-2、§ 7-3
+          <span>對應第①款「審判權要件」──審判權恆定與移送程序</span>
+        </div>
+        <div class="mm-body">
+          <div class="mm-center">
+            審判權爭議處理機制
+            <small>法組§7-2（恆定・羈束）＋§7-3（移送程序）</small>
+          </div>
+          <div class="mm-branches">
+            <div class="mm-branch">
+              <div class="mm-branch-head">§7-2　審判權恆定原則</div>
+              <div class="mm-branch-body">
+                <div class="mm-leaf"><span class="mm-tag">Ⅰ・恆定</span>起訴時法院<span class="mm-kw">有</span>審判權者，不因訴訟繫屬後事實及法律狀態變更而受影響。</div>
+                <div class="mm-leaf"><span class="mm-tag">Ⅱ・禁止重複起訴</span>訴訟已繫屬者，當事人<span class="mm-kw">不得</span>就同一事件向不同審判權之法院更行起訴。</div>
+                <div class="mm-leaf"><span class="mm-tag">Ⅲ・羈束力</span>法院認有審判權而為裁判經確定者，<span class="mm-kw">其他法院</span>受該認定羈束。</div>
+              </div>
+            </div>
+            <div class="mm-branch">
+              <div class="mm-branch-head">§7-3　審判權移送程序</div>
+              <div class="mm-branch-body">
+                <div class="mm-leaf"><span class="mm-tag">Ⅰ・移送義務</span>法院認其<span class="mm-kw">無</span>審判權者，應<span class="mm-kw">依職權</span>裁定移送至有審判權之管轄法院。</div>
+                <div class="mm-leaf"><span class="mm-tag">Ⅱ・指定權</span>有審判權之管轄法院為多數，原告有指定者，移送至指定之法院。</div>
+                <div class="mm-leaf"><span class="mm-tag">Ⅲ・先決裁定</span>當事人就審判權有爭執者，法院應<span class="mm-kw">先為裁定</span>。</div>
+                <div class="mm-leaf"><span class="mm-tag">Ⅳ・程序保障</span>第Ⅰ、Ⅲ項裁定前，應先徵詢當事人之意見。</div>
+                <div class="mm-leaf warn"><span class="mm-tag">Ⅴ・救濟</span>第Ⅰ、Ⅲ項裁定，<span class="mm-kw">得為抗告</span>。</div>
+              </div>
+            </div>
+          </div>
+          <div class="mm-relation">
+            <h4>與本條第①款的銜接關係</h4>
+            <ol>
+              <li>法院發現「無審判權」時，先依§7-3Ⅰ判斷<b>能否移送</b>；能移送者，應裁定移送，不得逕依§249Ⅰ①裁定駁回。</li>
+              <li>唯有「不能依法移送」（例如已無任何有審判權之法院、或其他法律另有排除規定）時，才回歸§249Ⅰ①以裁定駁回。</li>
+              <li>移送裁定確定後，依§7-2Ⅲ，該審判權認定對其他審判權系統之法院發生羈束力，不得再事爭執。</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
 
       <h3 style="margin:24px 0 8px;">（二）第二項二款──判決駁回事由</h3>
       <table>
@@ -527,12 +592,13 @@ tbody tr:nth-child(odd){background:var(--paper-card);}
           <p style="margin-top:10px;"><b>結論：</b><span class="neg">法院應依§249 II①，以判決駁回甲之訴；其與起訴不合程式之區別在於前者涉及原告有無實施訴訟之資格，後者僅涉及起訴狀記載是否完備。</span></p>
         </div>
       </div>
+    </section>
 
     <!-- ================= 八、申論練習題 ================= -->
     <section id="essay">
       <div class="eyebrow">ESSAY PRACTICE</div>
       <h2 class="sectitle">八、申論練習題與模擬解答</h2>
-      <p style="margin-bottom:10px;color:var(--ink-65);font-size:14px;">以下題目由 AI 依條文要件自行出題（經使用者授權），非取自特定考試或教材，僅供練習參考。</p>
+      <p style="margin-bottom:10px;color:var(--ink-65);font-size:14px;">練習題一～四由 AI 依條文要件自行出題（經使用者授權），非取自特定考試或教材，僅供練習參考；練習題五為歷屆考古題，來源標示如題末所示。</p>
 
       <div class="card quiz">
         <div class="card-header">練習題一</div>
@@ -575,6 +641,29 @@ tbody tr:nth-child(odd){background:var(--paper-card);}
           <p>依民事訴訟法第263條第1項規定，訴經撤回者，視同未起訴。甲於言詞辯論終結前撤回前訴，該訴訟繫屬即溯及消滅，兩造間就該借款債權已無訴訟繫屬存在，甲重新對乙提起相同之訴，並非於「訴訟繫屬中」更行起訴，不該當第253條禁止重複起訴之要件，亦不生第249條第1項第7款之駁回事由。故乙以甲之後訴為法所不許置辯，並無理由，法院應就甲之後訴為實體審理。</p>
           <p style="margin-top:8px;">惟若甲係於本案經第一審終局判決後始撤回起訴，依第263條第2項規定，於本案經終局判決後將訴撤回者，不得復提起同一之訴。此項規定之目的在於避免當事人利用撤回訴訟規避已完成之審理成果、浪費先前已投入之司法資源，並防止當事人藉撤回、再訴反覆纏訟。甲既已於終局判決後撤回起訴，其嗣後就同一借款債權再行起訴，即違反第263條第2項規定，依第249條第1項第7款規定，法院應以裁定駁回甲之後訴，且此一瑕疵屬性質上不可補正（甲無從使已撤回之終局判決後起訴狀態轉為合法）。</p>
           <p style="margin-top:8px;"><b>結論：</b><span class="pos">若甲於終局判決前撤回並重新起訴，乙之抗辯無理由，法院應為實體審理；若甲於終局判決後撤回，其後之重新起訴違反第263條第2項，法院應依第249條第1項第7款裁定駁回。</span></p>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <div class="card-header">練習題五（歷屆考古題）<span class="exam-tag">考古題</span></div>
+        <div class="card-body">
+          <p><b>題目：</b>X 將其 A 畫借給好友 Y，後 X 死亡，其繼承人為甲、乙、丙。因 Y 拒絕返還 A 畫，甲、乙遂為原告，依民法物上請求權之規定向法院訴請 Y 返還 A 畫。試說明：</p>
+          <p style="margin-top:6px;">（一）甲、乙提起之訴訟是否具當事人適格？原告應如何表明「應受判決事項之聲明」？（10分）</p>
+          <p style="margin-top:6px;">（二）若第一審法院判決原告敗訴，僅甲提起第二審上訴。甲合法提起上訴後，於第二審言詞辯論終結前甲復具狀表明撤回上訴，其效力及法院之處理方式為何？（15分）</p>
+
+          <p style="margin-top:12px;"><b>模擬解答（第一小題・與§249相關部分）：</b></p>
+          <p>甲、乙就本件訴訟具備當事人適格。按當事人適格為原告提起民事訴訟時應具備之合法性要件，若有欠缺而得補正，法院應限期命原告補正，若逾期未補正，或自始無法補正之情形，法院應依民事訴訟法第249條第2項第1款前段以判決駁回之。當事人適格之判斷，係以當事人對兩造爭執之訴訟標的有無訴訟實施權而定；依民法第828條第2項準用第821條規定，於公同共有物遭無權占有之情形，任一公同共有人均得為全體之利益對第三人主張所有物返還請求權，而無當事人不適格之疑慮，公同共有人全體並無一同起訴之必要。惟起訴之共有人不得請求被告將共有物僅向起訴之一人或數人返還，而須返還予共有人全體，否則即與民法第821條但書規定有違，將導致原告之訴當事人不適格。</p>
+          <p style="margin-top:8px;"><b>結論：</b><span class="pos">甲、乙、丙就A畫為公同共有，依民法第828條第2項準用第821條，甲、乙二人起訴即具當事人適格，惟訴之聲明應表明為「Y應將A畫返還予甲、乙、丙共有」，始為適法；若聲明僅請求返還予起訴之甲、乙，則構成當事人不適格。</span></p>
+
+          <p style="margin-top:12px;"><b>模擬解答（第二小題・§459Ⅱ必要共同訴訟撤回上訴，供延伸參考）：</b></p>
+          <p>甲、乙所提回復共有物之訴，訴訟標的對二人於法律上有合一確定之必要，屬必要共同訴訟；僅甲一人提起上訴，因上訴屬有利共同訴訟人全體之行為，依民訴法第56條第1項第1款，效力及於甲、乙二人。惟甲嗣後具狀撤回上訴，依民訴法第459條第2項規定，第二審法院應通知視為已提起上訴之乙，命其於10日內表示是否撤回：乙逾期未表示或表示同意撤回者，視同撤回上訴，第二審法院毋庸為任何裁判；乙若表示不同意撤回，則甲之撤回不生效力，第二審法院應就甲、乙之上訴有無理由為裁判。</p>
+          <p style="margin-top:8px;"><b>結論：</b><span class="pos">甲一人撤回上訴，是否生效視乙是否於10日期間內表示不同意而定；乙不同意者，撤回不生效力，第二審法院應續行審理甲、乙之上訴。</span></p>
+
+          <div class="src-block">
+            📂 <b>題目來源</b>｜113年公務人員特種考試司法人員考試（四等・法院書記官、執達員）／民事訴訟法概要與刑事訴訟法概要，公職王歷屆試題（林翔／墨笛老師擬答）<br>
+            🔗 <a href="https://www.public.com.tw/TestFileManage/21107/anspdf/113%E5%8F%B8%E6%B3%95%E5%9B%9B%E7%AD%89-%E6%B0%91%E4%BA%8B%E8%A8%B4%E8%A8%9F%E6%B3%95%E6%A6%82%E8%A6%81%E8%88%87%E5%88%91%E4%BA%8B%E8%A8%B4%E8%A8%9F%E6%B3%95%E6%A6%82%E8%A6%81.pdf" target="_blank">原始檔案連結（公職王）</a><br>
+            ⚠️ 本題擬答為補習班轉載官方試題後之自行解析，非考選部官方公布解答，建議核對後使用；第二小題涉及§459Ⅱ必要共同訴訟撤回上訴，非本條（§249）核心範圍，收錄供延伸練習參考。
+          </div>
         </div>
       </div>
     </section>
