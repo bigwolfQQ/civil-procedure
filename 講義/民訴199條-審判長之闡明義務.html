@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民事訴訟法第199條－審判長之闡明義務｜教學講義</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233b;
+    --indigo:#2c4a76;
+    --paper-outer:#f3ede0;
+    --paper-content:#fbf8f1;
+    --paper-card:#fffdf8;
+    --seal:#9c2b3a;
+    --brass:#a9832f;
+    --border:#ddd3bf;
+    --ink-45:rgba(22,35,59,.45);
+    --ink-70:rgba(22,35,59,.7);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC",sans-serif;
+    background:var(--paper-outer);
+    color:var(--ink);
+    line-height:1.75;
+  }
+  h1,h2,h3,h4,.serif{font-family:"Noto Serif TC",serif;}
+  a{color:var(--indigo);}
+
+  /* ===== Layout ===== */
+  .shell{display:flex;max-width:1180px;margin:0 auto;min-height:100vh;}
+  nav.sidebar{
+    width:240px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;
+    height:100vh;overflow-y:auto;padding:28px 18px;border-right:1px solid var(--border);
+  }
+  nav.sidebar .nav-title{font-size:12px;color:var(--ink-45);letter-spacing:2px;margin-bottom:14px;}
+  nav.sidebar a{
+    display:block;font-size:14px;color:var(--ink-70);text-decoration:none;
+    padding:7px 10px;border-radius:6px;margin-bottom:2px;border-left:3px solid transparent;
+  }
+  nav.sidebar a.active{color:var(--indigo);border-left-color:var(--indigo);background:rgba(44,74,118,.06);font-weight:700;}
+  nav.sidebar a.pending{color:var(--ink-45);}
+  main{
+    flex:1;min-width:0;background:var(--paper-content);
+    box-shadow:-8px 0 24px -20px rgba(22,35,59,.4);
+    padding:0 0 60px;
+  }
+  .topnav{display:none;}
+
+  @media (max-width:980px){
+    .shell{display:block;}
+    nav.sidebar{display:none;}
+    .topnav{
+      display:flex;position:sticky;top:0;z-index:20;background:var(--paper-outer);
+      overflow-x:auto;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);
+      -webkit-overflow-scrolling:touch;
+    }
+    .topnav a{
+      flex-shrink:0;font-size:13px;padding:7px 14px;border-radius:999px;
+      background:var(--paper-card);border:1px solid var(--border);color:var(--ink-70);text-decoration:none;
+    }
+    .topnav a.active{background:var(--indigo);color:#fdfaf2;border-color:var(--indigo);}
+    .topnav a.pending{color:var(--ink-45);}
+    main{box-shadow:none;}
+  }
+
+  section{padding:40px 48px;border-bottom:1px dashed var(--border);}
+  @media (max-width:640px){section{padding:30px 20px;}}
+  section h2{font-size:22px;margin:0 0 20px;padding-left:14px;border-left:4px solid var(--brass);}
+  section h3{font-size:17px;margin:26px 0 12px;padding-left:10px;border-left:3px solid var(--indigo);}
+
+  /* ===== Cover ===== */
+  .cover{
+    padding:56px 48px 44px;position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#f6f1e4,var(--paper-content));
+  }
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:2px;color:var(--brass);
+    border:1px solid var(--brass);padding:4px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .cover h1{font-size:32px;font-weight:900;margin:0 0 8px;max-width:640px;}
+  .cover .subtitle{color:var(--ink-70);font-size:15px;margin-bottom:14px;}
+  .cover-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:26px;}
+  .ver-badge,.meta-date,.visitor-badge{
+    font-size:12px;padding:4px 10px;border-radius:6px;border:1px solid var(--indigo);color:var(--indigo);
+  }
+  .ver-badge{border-color:var(--seal);color:var(--seal);}
+  .visitor-badge img{display:block;height:20px;}
+  .seal-mark{
+    position:absolute;top:36px;right:48px;width:74px;height:98px;
+    border:3px solid var(--seal);border-radius:6px;color:var(--seal);
+    display:flex;align-items:center;justify-content:center;
+    writing-mode:vertical-rl;font-family:"Noto Serif TC";font-weight:900;font-size:19px;
+    transform:rotate(6deg);letter-spacing:4px;opacity:.85;
+  }
+  @media (max-width:640px){.seal-mark{display:none;}}
+  .toc{background:var(--paper-card);border:1px solid var(--border);border-radius:10px;padding:18px 22px;max-width:520px;}
+  .toc div{font-size:13px;color:var(--ink-45);margin-bottom:8px;letter-spacing:1px;}
+  .toc ol{margin:0;padding-left:18px;font-size:14px;}
+  .toc li{margin-bottom:4px;}
+
+  /* ===== 條文框 ===== */
+  .article-box{
+    position:relative;background:var(--paper-card);border-left:3px solid var(--indigo);
+    border-radius:4px;padding:20px 24px;margin:16px 0;overflow:hidden;
+    box-shadow:0 1px 0 var(--border);
+  }
+  .article-box .wm{
+    position:absolute;right:10px;bottom:-14px;font-family:"Noto Serif TC";font-weight:900;
+    font-size:96px;color:var(--ink);opacity:.06;line-height:1;pointer-events:none;
+  }
+  .article-box .art-no{font-weight:700;color:var(--indigo);margin-bottom:6px;font-family:"Noto Serif TC";}
+  .article-box p{margin:6px 0;position:relative;z-index:1;}
+  .relation-note-box{
+    font-size:13px;color:var(--ink-70);background:rgba(169,131,47,.08);
+    border:1px dashed var(--brass);border-radius:6px;padding:10px 14px;margin:10px 0 20px;
+  }
+
+  /* ===== 表格 ===== */
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--paper-card);}
+  th{background:var(--ink);color:var(--paper-content);text-align:left;padding:10px 12px;font-weight:700;}
+  td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+  tr:nth-child(even) td{background:#f6f1e6;}
+  tr:nth-child(odd) td{background:#fffdf8;}
+
+  .pos{font-weight:700;color:var(--ink);background:linear-gradient(transparent 60%,rgba(169,131,47,.35) 60%);}
+  .neg{font-weight:700;color:var(--seal);}
+
+  /* ===== 卡片（案例／申論） ===== */
+  .card{
+    background:var(--paper-card);border:1px solid var(--border);border-radius:10px;
+    margin:18px 0;overflow:hidden;
+    box-shadow:0 1px 2px rgba(22,35,59,.08),0 8px 20px -12px rgba(22,35,59,.25);
+  }
+  .card .card-head{
+    background:var(--indigo);color:#fdfaf2;padding:12px 18px;font-family:"Noto Serif TC";font-weight:700;font-size:15px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .card.exam .card-head{background:var(--ink);}
+  .card .card-body{padding:18px 20px;font-size:14.5px;}
+  .card .tag{font-size:11px;background:rgba(255,255,255,.18);padding:2px 8px;border-radius:999px;}
+  .card .card-body h4{margin:14px 0 6px;font-size:13.5px;color:var(--indigo);}
+  .card .card-body h4:first-child{margin-top:0;}
+  .teaching-flag{
+    display:inline-block;font-size:11px;color:var(--seal);border:1px solid var(--seal);
+    padding:1px 8px;border-radius:999px;margin-left:8px;
+  }
+
+  /* ===== 佔位樣式 ===== */
+  .placeholder{
+    border:2px dashed var(--brass);border-radius:10px;padding:34px 20px;text-align:center;
+    background:repeating-linear-gradient(135deg,rgba(169,131,47,.05) 0 10px,rgba(169,131,47,.09) 10px 20px);
+    color:var(--ink-45);
+  }
+  .placeholder .ph-icon{font-size:26px;margin-bottom:8px;}
+  .placeholder .ph-badge{
+    display:inline-block;margin-top:10px;font-size:12px;border:1px solid var(--brass);
+    color:var(--brass);padding:3px 12px;border-radius:999px;
+  }
+
+  /* ===== 速查卡 ===== */
+  .quickcard{
+    position:relative;background:var(--ink);color:#f3ede0;border-radius:12px;
+    padding:28px 30px;overflow:hidden;margin-top:10px;
+  }
+  .quickcard .wm{
+    position:absolute;right:14px;bottom:-20px;font-family:"Noto Serif TC";font-weight:900;
+    font-size:130px;opacity:.08;line-height:1;
+  }
+  .quickcard h3{border:none;padding:0;color:#f3ede0;margin-top:0;}
+  .quickcard ul{padding-left:20px;font-size:14px;}
+  .mnemonic{
+    background:var(--seal);color:#fff;padding:12px 18px;border-radius:8px;
+    font-family:"Noto Serif TC";font-weight:700;font-size:16px;text-align:center;margin-top:16px;
+    letter-spacing:1px;
+  }
+
+  /* ===== 來源標示 ===== */
+  .source-block{font-size:12.5px;color:var(--ink-70);border-top:1px dashed var(--border);margin-top:14px;padding-top:10px;}
+
+  .link-note{border:1px dashed var(--indigo);border-radius:8px;padding:14px 18px;font-size:13.5px;margin-top:16px;}
+  .link-note a{display:inline-block;margin-top:4px;}
+
+  svg text{font-family:"Noto Sans TC","Noto Serif TC",sans-serif;}
+  .diagram-wrap{background:var(--paper-card);border:1px solid var(--border);border-radius:10px;padding:18px;margin:16px 0;overflow-x:auto;}
+  .relation-note,.flow-note{text-align:center;font-size:12.5px;color:var(--ink-45);margin-top:6px;}
+
+  .caveat{font-size:12.5px;color:var(--ink-70);background:rgba(156,43,58,.06);border:1px dashed var(--seal);border-radius:6px;padding:8px 12px;margin:10px 0;}
+</style>
+</head>
+<body>
+
+<div class="topnav" id="topnav"></div>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="nav-title">目　錄</div>
+  </nav>
+
+  <main>
+    <section class="cover" id="cover">
+      <span class="eyebrow">第二編 第一審程序・第一章 通常訴訟程序・第三節 言詞辯論</span>
+      <div class="seal-mark">闡明</div>
+      <h1>民事訴訟法第199條<br>審判長之闡明義務</h1>
+      <div class="subtitle">闡明權與闡明義務・訴訟指揮之核心規範</div>
+      <div class="cover-meta">
+        <span class="ver-badge">v1.0</span>
+        <span class="meta-date">建立日期 2026-08-26</span>
+        <span class="visitor-badge"><img src="https://visitor-badge.laobi.icu/badge?page_id=mjib007.civil-procedure.199" alt="訪客次數"></span>
+      </div>
+      <div class="toc">
+        <div>本篇目錄</div>
+        <ol>
+          <li>條文原文與關聯條文</li>
+          <li>條文結構總覽</li>
+          <li>各項逐項解析</li>
+          <li>闡明義務體系心智圖</li>
+          <li>學說見解</li>
+          <li>實務見解</li>
+          <li>教學案例（4則）</li>
+          <li>申論練習題與模擬解答（4題）</li>
+          <li>速查卡</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 1. 條文原文 -->
+    <section id="sec-1">
+      <h2>一、條文原文與關聯條文</h2>
+
+      <div class="article-box">
+        <div class="art-no">民事訴訟法第199條（審判長之闡明義務）</div>
+        <p>Ⅰ　審判長應注意令當事人就訴訟關係之事實及法律為適當完全之辯論。</p>
+        <p>Ⅱ　審判長應向當事人發問或曉諭，令其為事實上及法律上陳述、聲明證據或為其他必要之聲明及陳述；其所聲明或陳述有不明瞭或不完足者，應令其敘明或補充之。</p>
+        <p>Ⅲ　陪席法官告明審判長後，得向當事人發問或曉諭。</p>
+        <span class="wm">199</span>
+      </div>
+
+      <h3>關聯條文</h3>
+
+      <div class="article-box">
+        <div class="art-no">第199條之1（特殊闡明義務）</div>
+        <p>Ⅰ　依原告之聲明及事實上之陳述，得主張數項法律關係，而其主張不明瞭或不完足者，審判長應曉諭其敘明或補充之。</p>
+        <p>Ⅱ　被告如主張有消滅或妨礙原告請求之事由，究為防禦方法或提起反訴有疑義時，審判長應闡明之。</p>
+        <span class="wm">199-1</span>
+      </div>
+
+      <div class="article-box">
+        <div class="art-no">第288條（職權調查證據）</div>
+        <p>Ⅰ　法院不能依當事人聲明之證據而得心證，為發現真實認為必要時，得依職權調查證據。</p>
+        <p>Ⅱ　依前項規定為調查時，應令當事人有陳述意見之機會。</p>
+        <span class="wm">288</span>
+      </div>
+
+      <div class="article-box">
+        <div class="art-no">第469條（判決當然違背法令事由）</div>
+        <p>有下列各款情形之一者，其判決當然為違背法令：一、判決法院之組織不合法。二、依法律或裁判應迴避之法官參與裁判。三、法院於審判權之有無辨別不當或違背專屬管轄之規定。但當事人未於事實審爭執，或法律別有規定者，不在此限。四、當事人於訴訟未經合法代理。五、違背言詞辯論公開之規定。六、判決不備理由或理由矛盾。</p>
+        <span class="wm">469</span>
+      </div>
+
+      <div class="article-box">
+        <div class="art-no">第196條（攻擊防禦方法之提出時期）</div>
+        <p>Ⅰ　攻擊或防禦方法，除別有規定外，應依訴訟進行之程度，於言詞辯論終結前適當時期提出之。</p>
+        <p>Ⅱ　當事人意圖延滯訴訟，或因重大過失，逾時始行提出攻擊或防禦方法，有礙訴訟之終結者，法院得駁回之。攻擊或防禦方法之意旨不明瞭，經命其敘明而不為必要之敘明者，亦同。</p>
+        <span class="wm">196</span>
+      </div>
+      <div class="relation-note-box">
+        📌 第196條與第199條屬「一體兩面」的關係：第199條課予審判長主動闡明的義務，確保當事人有機會把話說清楚；第196條則是當事人經闡明命其敘明後仍不敘明、或逾時提出攻擊防禦方法時，法院得駁回的失權效果。理解闡明義務時，須同時掌握「闡明是失權的前提」——法院若未先盡闡明義務，即逕行以第196條駁回，程序即有瑕疵。
+      </div>
+    </section>
+
+    <!-- 2. 條文結構 -->
+    <section id="sec-2">
+      <h2>二、條文結構總覽</h2>
+      <p>第199條共三項，性質與功能各不相同，可整理如下：</p>
+      <table>
+        <thead><tr><th>項次</th><th>規範內容</th><th>性質定性</th><th>義務主體</th></tr></thead>
+        <tbody>
+          <tr><td>第1項</td><td>審判長應注意令當事人就事實及法律為適當完全之辯論</td><td class="pos">訓示性通則規定，揭示闡明制度之目的</td><td>審判長</td></tr>
+          <tr><td>第2項</td><td>應發問或曉諭，令當事人陳述、聲明證據或補充不明瞭、不完足之聲明陳述</td><td class="pos">具體闡明義務（權限亦屬義務）</td><td>審判長</td></tr>
+          <tr><td>第3項</td><td>陪席法官告明審判長後，得向當事人發問或曉諭</td><td>陪席法官之闡明「權限」，非獨立義務</td><td>陪席法官（須先告明審判長）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>與第199條之1的層次關係</h3>
+      <table>
+        <thead><tr><th>類型</th><th>適用情形</th><th>條文依據</th></tr></thead>
+        <tbody>
+          <tr><td>一般闡明義務</td><td>當事人聲明或陳述本身不明瞭或不完足</td><td>第199條第2項</td></tr>
+          <tr><td>特殊闡明義務（一）</td><td>原告得主張數項法律關係，但主張不明瞭或不完足</td><td>第199條之1第1項</td></tr>
+          <tr><td>特殊闡明義務（二）</td><td>被告抗辯性質不明（防禦方法或反訴）</td><td>第199條之1第2項</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3. 逐項解析 -->
+    <section id="sec-3">
+      <h2>三、各項逐項解析</h2>
+
+      <h3>第1項：闡明義務之目的性規定</h3>
+      <p>第1項是整個闡明制度的「總則」，宣示審判長負有促使當事人就事實與法律「適當完全辯論」之注意義務。民國89年修法前，闡明範圍僅及於「事實」；修法後明文擴及「法律」，法官若心中已形成與當事人主張不同之法律評價，應提示令雙方就此表示意見，避免造成「突襲性裁判」。</p>
+
+      <h3>第2項：具體闡明作為義務</h3>
+      <p>第2項是實際課予審判長作為義務的核心規定，可拆解為三種闡明類型：</p>
+      <table>
+        <thead><tr><th>闡明類型</th><th>要件</th><th>審判長應為之行為</th></tr></thead>
+        <tbody>
+          <tr><td>發問或曉諭</td><td>當事人就事實上、法律上陳述、聲明證據或其他必要聲明陳述有所欠缺</td><td>主動發問，促使當事人為完整陳述</td></tr>
+          <tr><td>令敘明</td><td>當事人已為聲明或陳述，但內容不明瞭</td><td>命當事人說明清楚，排除疑義</td></tr>
+          <tr><td>令補充</td><td>當事人已為聲明或陳述，但內容不完足</td><td>命當事人補足欠缺部分</td></tr>
+        </tbody>
+      </table>
+      <p>學說上多認為，此項闡明兼具「權限」與「義務」雙重性質：審判長固有裁量如何行使闡明之方式與時機，但若對於訴訟關係已現不明瞭或不完足之跡象仍消極不予闡明，即屬違背義務，訴訟程序即有瑕疵，據此所為判決<span class="neg">屬違背法令</span>。</p>
+
+      <h3>第3項：陪席法官之闡明權限</h3>
+      <p>民事訴訟合議審判時，陪席法官並非訴訟指揮權主體，故第3項明定陪席法官須先「告明審判長」，取得審判長認可後，始得向當事人發問或曉諭。此設計目的在維持審判長對訴訟程序指揮權之一致性，避免合議庭成員各自對當事人發問造成程序紊亂。與第1、2項不同，第3項文字使用「得」，性質上屬陪席法官之權限，而非強制性義務。</p>
+
+      <h3>闡明義務之界限——與辯論主義之分際</h3>
+      <p>闡明義務行使並非漫無邊際。依辯論主義，法院裁判之範圍與判決基礎之訴訟資料，原則上應以當事人聲明及主張者為限；審判長行使闡明權，必須以當事人之聲明或陳述「已有不明瞭或不完足之跡象」為前提，不能主動為當事人創設全新的、未曾表明過的攻擊防禦方法或訴訟標的，否則即逾越闡明權之正當界線，反而破壞當事人進行主義下的處分權與辯論主義精神。</p>
+    </section>
+
+    <!-- 4. 心智圖 -->
+    <section id="sec-4">
+      <h2>四、闡明義務體系心智圖</h2>
+
+      <h3>（一）第199條與相關條文之體系架構</h3>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 680 380" width="100%" role="img" aria-label="闡明義務體系架構圖">
+          <!-- center node -->
+          <rect x="255" y="160" width="170" height="60" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2"/>
+          <text x="340" y="184" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">民訴§199</text>
+          <text x="340" y="203" text-anchor="middle" font-size="11" fill="#5b6472">審判長一般闡明義務</text>
+
+          <!-- 199-1 -->
+          <rect x="30" y="30" width="180" height="64" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="120" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">§199-1</text>
+          <text x="120" y="72" text-anchor="middle" font-size="10.5" fill="#5b6472">特殊闡明（訴之聲明</text>
+          <text x="120" y="86" text-anchor="middle" font-size="10.5" fill="#5b6472">／反訴或防禦方法）</text>
+
+          <!-- 288 -->
+          <rect x="470" y="30" width="180" height="64" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="560" y="54" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">§288</text>
+          <text x="560" y="72" text-anchor="middle" font-size="10.5" fill="#5b6472">職權調查證據</text>
+          <text x="560" y="86" text-anchor="middle" font-size="10.5" fill="#5b6472">（闡明之外部界限）</text>
+
+          <!-- 196 -->
+          <rect x="30" y="280" width="180" height="64" rx="6" fill="#fffdf8" stroke="#a9832f" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="120" y="304" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">§196</text>
+          <text x="120" y="322" text-anchor="middle" font-size="10.5" fill="#5b6472">攻防方法失權效</text>
+          <text x="120" y="336" text-anchor="middle" font-size="10.5" fill="#5b6472">（闡明後仍不敘明）</text>
+
+          <!-- 469 -->
+          <rect x="470" y="280" width="180" height="64" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2"/>
+          <text x="560" y="304" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">§469Ⅵ</text>
+          <text x="560" y="322" text-anchor="middle" font-size="10.5" fill="#9c2b3a">判決不備理由</text>
+          <text x="560" y="336" text-anchor="middle" font-size="10.5" fill="#5b6472">（闡明義務違反之救濟）</text>
+
+          <!-- lines -->
+          <line x1="255" y1="175" x2="210" y2="80" stroke="#2c4a76" stroke-width="2"/>
+          <text x="205" y="130" font-size="10.5" fill="#a9832f">位階／特殊化</text>
+
+          <line x1="425" y1="175" x2="470" y2="80" stroke="#2c4a76" stroke-width="2"/>
+          <text x="435" y="130" font-size="10.5" fill="#a9832f">職權界限銜接</text>
+
+          <line x1="255" y1="205" x2="150" y2="280" stroke="#a9832f" stroke-width="2" stroke-dasharray="5 5"/>
+          <text x="150" y="255" font-size="10.5" fill="#a9832f">未闡明先失權（違法）</text>
+
+          <line x1="425" y1="205" x2="530" y2="280" stroke="#9c2b3a" stroke-width="2"/>
+          <text x="440" y="255" font-size="10.5" fill="#9c2b3a">違反闡明義務</text>
+        </svg>
+      </div>
+      <p class="flow-note">紅框（§469Ⅵ）為闡明義務違反後的最終救濟出口；黃虛線框（§196）提醒：法院若未先盡闡明即逕依§196駁回攻防方法，程序即屬違法。</p>
+
+      <h3>（二）第199條內部三項結構</h3>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 640 260" width="100%" role="img" aria-label="第199條內部結構圖">
+          <rect x="20" y="30" width="180" height="80" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="110" y="58" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">第1項</text>
+          <text x="110" y="76" text-anchor="middle" font-size="11" fill="#5b6472">目的性訓示規定</text>
+          <text x="110" y="92" text-anchor="middle" font-size="11" fill="#5b6472">（事實＋法律辯論）</text>
+
+          <rect x="230" y="30" width="180" height="80" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2.5"/>
+          <text x="320" y="58" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">第2項</text>
+          <text x="320" y="76" text-anchor="middle" font-size="11" fill="#9c2b3a">具體闡明作為義務</text>
+          <text x="320" y="92" text-anchor="middle" font-size="11" fill="#5b6472">（發問／曉諭／敘明／補充）</text>
+
+          <rect x="440" y="30" width="180" height="80" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="530" y="58" text-anchor="middle" font-size="13.5" font-weight="700" fill="#16233b">第3項</text>
+          <text x="530" y="76" text-anchor="middle" font-size="11" fill="#5b6472">陪席法官闡明權限</text>
+          <text x="530" y="92" text-anchor="middle" font-size="11" fill="#5b6472">（先告明審判長）</text>
+
+          <line x1="200" y1="70" x2="230" y2="70" stroke="#2c4a76" stroke-width="2" marker-end="url(#arrow)"/>
+          <line x1="410" y1="70" x2="440" y2="70" stroke="#2c4a76" stroke-width="2" marker-end="url(#arrow)"/>
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#2c4a76"/>
+            </marker>
+          </defs>
+
+          <text x="320" y="150" text-anchor="middle" font-size="11.5" fill="#5b6472">義務強度：第2項 &gt; 第1項（訓示）／第3項（權限，附加要件）</text>
+          <rect x="150" y="175" width="340" height="50" rx="6" fill="none" stroke="#a9832f" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="320" y="195" text-anchor="middle" font-size="11.5" fill="#a9832f">共同界限：不得逾越辯論主義</text>
+          <text x="320" y="212" text-anchor="middle" font-size="11.5" fill="#a9832f">（僅止於既有聲明陳述之明瞭化，不得代為創設新主張）</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 5. 學說見解 -->
+    <section id="sec-5">
+      <h2>五、學說見解</h2>
+      <div class="caveat">下列見解一則轉引自試讀頁面、一則為考用書摘整理，尚未逐字核對原始出版品全文，引用時建議標明「摘引自」並註明出處，正式引用學術論著請另行查證原文。</div>
+
+      <table>
+        <thead><tr><th>學者</th><th>見解摘要</th><th>出處</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>姜世明</td>
+            <td>法官就「法律見解」之闡明是否屬義務，學說上仍有爭議；曾以最高法院98年度台上字第1655號民事判決為評析對象，討論法官闡明法律見解之界限與心證公開之衝突。</td>
+            <td>姜世明，〈法官對於法律見解之闡明〉，收錄相關論著試讀頁面</td>
+          </tr>
+          <tr>
+            <td>（考用書摘整理）</td>
+            <td>將闡明範圍區分為四種類型：①將不明瞭者為適當之闡明；②訴訟資料補充之闡明；③除去不當之闡明（如曉諭當事人將錯誤聲明改為正確聲明）；④新訴訟資料提出之闡明。並指出闡明權同時具有「權限」與「義務」雙重性質，違背即屬程序瑕疵。</td>
+            <td>國考參考資料整理（公職／司法特考用書彙編網站）</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 6. 實務見解 -->
+    <section id="sec-6">
+      <h2>六、實務見解</h2>
+      <div class="caveat">以下四則裁判均轉引自非官方網站之節錄整理，尚未經司法院裁判書查詢系統原文核實，僅列案號與查詢路徑，內容摘要保留為轉引來源之陳述，正式引用前請自行查閱全文。前三則屬「判例」字號——民國108年法院組織法修正後，判例制度已不再選編，舊判例現僅作為裁判先例參考，不具過去之拘束力。</div>
+
+      <table>
+        <thead><tr><th>案號</th><th>要旨（轉引摘要）</th><th>查詢方式</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>最高法院43年台上字第12號（舊判例）</td>
+            <td>第199條第2項所定之闡明，係審判長定訴訟關係之權限，同時亦為其義務，若未盡此義務，訴訟程序即有重大瑕疵，基此所為之判決自屬違背法令。</td>
+            <td>可至 <a href="https://law.moj.gov.tw/" target="_blank">法規資料庫判例查詢</a> 或司法院裁判書查詢系統輸入案號查閱全文</td>
+          </tr>
+          <tr>
+            <td>最高法院43年台上字第433號（舊判例）</td>
+            <td>當事人同時主張不同法律基礎，原審未先闡明是否為先位、備位聲明，逕以其中一法律構成不合要件駁回其訴，構成闡明義務之違反。</td>
+            <td>同上，判例查詢路徑</td>
+          </tr>
+          <tr>
+            <td>最高法院67年台上字第425號（舊判例）</td>
+            <td>提起反訴與否屬當事人之訴訟策略選擇，非闡明權行使之範圍，法院不得要求或暗示當事人提出反訴，否則逾越闡明義務之正當界線。</td>
+            <td>同上，判例查詢路徑</td>
+          </tr>
+          <tr>
+            <td>最高法院108年台上字第28號</td>
+            <td>涉及法院依卷內資料所確定之事實，依職權尋求、發現並適用法律規範之職責，與闡明界限有關。</td>
+            <td>本裁判可至司法院裁判書查詢系統（<a href="https://judgment.judicial.gov.tw/" target="_blank">judgment.judicial.gov.tw</a>）輸入案號【108年，台上，28號】自行查閱全文</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>大法官解釋／憲法法庭判決</h3>
+      <div class="placeholder">
+        <div class="ph-icon">⚖️</div>
+        <div>本條（§199）目前查無大法官解釋或憲法法庭判決，理由為：本條屬訴訟程序性規範，未有人以此聲請違憲審查。</div>
+        <span class="ph-badge">查無資料</span>
+      </div>
+    </section>
+
+    <!-- 7. 教學案例 -->
+    <section id="sec-7">
+      <h2>七、教學案例</h2>
+
+      <div class="card">
+        <div class="card-head"><span>案例一：聲明不明瞭之闡明（第2項）<span class="teaching-flag">教學用途・AI虛構</span></span></div>
+        <div class="card-body">
+          <h4>事實</h4>
+          <p>原告甲於起訴狀僅記載「被告乙應給付原告新臺幣30萬元」，但未敘明請求權基礎究竟是借貸返還、買賣價金或損害賠償，言詞辯論時亦僅重複陳述金額，未進一步說明事實經過。</p>
+          <h4>爭點</h4>
+          <p>審判長於此情形，是否負有依第199條第2項闡明之義務？未闡明逕行審理，判決有何瑕疵？</p>
+          <h4>分析</h4>
+          <p>甲之聲明雖已明確（給付30萬元），但其請求所依據之事實及法律關係全然不明，屬第2項所稱「陳述不明瞭」之典型情形。審判長應主動發問，令甲敘明其請求權基礎所依據之事實，使法院得以特定訴訟標的、被告得以特定答辯範圍。若審判長消極不予闡明，逕以甲未能舉證特定法律關係為由駁回其訴，即屬<span class="neg">違背闡明義務</span>，訴訟程序有重大瑕疵。</p>
+          <h4>結論</h4>
+          <p>審判長<span class="pos">應行使闡明權</span>，命甲敘明請求權基礎之具體事實，未闡明逕予駁回之判決得為上訴理由。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><span>案例二：數項法律關係主張不明（§199-1Ⅰ）<span class="teaching-flag">教學用途・AI虛構</span></span></div>
+        <div class="card-body">
+          <h4>事實</h4>
+          <p>原告丙主張已交付被告丁一筆款項，事實陳述中同時提及「這筆錢是借給丁的」及「丁後來說要幫我投資但沒有法律依據收下」，聲明僅記載「丁應返還30萬元」，未表明究竟依消費借貸或不當得利請求。</p>
+          <h4>爭點</h4>
+          <p>此種可能同時構成數項法律關係、但當事人陳述未予區分的情形，應如何闡明？</p>
+          <h4>分析</h4>
+          <p>依丙之事實陳述，客觀上可能同時該當消費借貸返還請求權（民法第478條）與不當得利返還請求權（民法第179條）兩種法律關係，但其主張何者為據並不明瞭，屬第199條之1第1項規範之典型情形。審判長應曉諭丙敘明其主張之法律關係究竟為何，或以先位、備位之方式表明，避免法院逕自選定其中一項而生突襲性裁判之虞。</p>
+          <h4>結論</h4>
+          <p>審判長<span class="pos">應曉諭原告敘明或補充</span>其主張之法律關係先後位序，未闡明逕行審理並僅就其中一項法律關係為判決，即有闡明義務違反之虞。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><span>案例三：訴訟代理人陳述不完足之闡明<span class="teaching-flag">教學用途・AI虛構</span></span></div>
+        <div class="card-body">
+          <h4>事實</h4>
+          <p>原告戊委任訴訟代理人己提起返還借款訴訟。庭訊中，法院發現己僅提出借款交付之事實，卻未就約定返還期限、有無約定利息等重要事實為陳述，己本人似乎也不確定戊當初與被告之間的約定細節。</p>
+          <div class="relation-wrap">
+            <svg viewBox="0 0 640 300" width="100%" role="img" aria-label="人物關係圖：法院、原告戊、訴訟代理人己">
+              <rect x="40" y="30" width="180" height="70" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+              <text x="130" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">法院（審判長）</text>
+              <text x="130" y="78" text-anchor="middle" font-size="11" fill="#5b6472">訴訟指揮／闡明義務主體</text>
+
+              <rect x="420" y="30" width="180" height="70" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+              <text x="510" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">原告　戊</text>
+              <text x="510" y="78" text-anchor="middle" font-size="11" fill="#5b6472">實際借款事實知悉者</text>
+
+              <rect x="230" y="200" width="180" height="70" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2.5"/>
+              <text x="320" y="228" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">訴訟代理人　己</text>
+              <text x="320" y="247" text-anchor="middle" font-size="10.5" fill="#9c2b3a">陳述約定期限、利息不完足</text>
+
+              <line x1="130" y1="100" x2="300" y2="205" stroke="#2c4a76" stroke-width="2"/>
+              <text x="150" y="160" font-size="11" fill="#2c4a76">應向己發問曉諭</text>
+
+              <line x1="510" y1="100" x2="350" y2="205" stroke="#a9832f" stroke-width="2" stroke-dasharray="5 5"/>
+              <text x="420" y="160" font-size="11" fill="#a9832f">授權範圍是否涵蓋補充陳述</text>
+
+              <line x1="220" y1="65" x2="420" y2="65" stroke="#2c4a76" stroke-width="2"/>
+              <text x="320" y="55" text-anchor="middle" font-size="11" fill="#5b6472">委任訴訟代理</text>
+            </svg>
+          </div>
+          <div class="relation-note">紅框標示陳述不完足之爭點所在：訴訟代理人己本身資訊不足，法院闡明對象與代理人補充陳述之授權範圍值得留意。</div>
+          <h4>爭點</h4>
+          <p>訴訟代理人本人對事實掌握不完足時，闡明義務應如何行使？是否須直接對原告本人發問？</p>
+          <h4>分析</h4>
+          <p>第199條所稱「當事人」在委任訴訟代理人之情形，原則上以代理人為闡明對象，法院向己發問曉諭已足。惟若己本人確實無法補充陳述，審判長基於發現真實與適當完全辯論之要求，得依訴訟指揮權曉諭戊本人到場陳述，或命己於期限內查明後補充書狀，此屬法院裁量範圍，尚非強制須直接傳喚本人。</p>
+          <h4>結論</h4>
+          <p>審判長<span class="pos">應先向訴訟代理人己闡明命其補充</span>，如代理人確實無法補充，得再依情況曉諭原告本人到場陳述，尚不因委任訴訟代理人而免除闡明義務。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><span>案例四：防禦方法或反訴不明（§199-1Ⅱ）<span class="teaching-flag">教學用途・AI虛構</span></span></div>
+        <div class="card-body">
+          <h4>事實</h4>
+          <p>原告庚訴請被告辛給付貨款50萬元，辛於答辯狀中僅記載「庚尚欠我先前一批貨款的違約金40萬元未清償，我不應該全額給付」，但未明確表示這是要主張抵銷（防禦方法）還是要另外請求辛給付違約金（反訴）。</p>
+          <div class="relation-wrap">
+            <svg viewBox="0 0 640 300" width="100%" role="img" aria-label="人物關係圖：法院、原告庚、被告辛">
+              <rect x="40" y="30" width="180" height="70" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+              <text x="130" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">原告　庚</text>
+              <text x="130" y="78" text-anchor="middle" font-size="11" fill="#5b6472">請求給付貨款50萬元</text>
+
+              <rect x="420" y="30" width="180" height="70" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+              <text x="510" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">被告　辛</text>
+              <text x="510" y="78" text-anchor="middle" font-size="11" fill="#5b6472">主張違約金40萬元未清償</text>
+
+              <rect x="230" y="200" width="180" height="70" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2.5"/>
+              <text x="320" y="228" text-anchor="middle" font-size="14" font-weight="700" fill="#16233b">法院（審判長）</text>
+              <text x="320" y="247" text-anchor="middle" font-size="10.5" fill="#9c2b3a">性質不明：防禦方法或反訴？</text>
+
+              <line x1="130" y1="100" x2="300" y2="205" stroke="#a9832f" stroke-width="2" stroke-dasharray="5 5"/>
+              <text x="150" y="160" font-size="11" fill="#a9832f">給付請求關係</text>
+
+              <line x1="510" y1="100" x2="350" y2="205" stroke="#a9832f" stroke-width="2" stroke-dasharray="5 5"/>
+              <text x="420" y="160" font-size="11" fill="#a9832f">應闡明性質</text>
+
+              <line x1="220" y1="65" x2="420" y2="65" stroke="#2c4a76" stroke-width="2"/>
+              <text x="320" y="55" text-anchor="middle" font-size="11" fill="#5b6472">買賣貨款爭議</text>
+            </svg>
+          </div>
+          <div class="relation-note">紅框標示核心爭點：辛之主張性質不明，須由法院闡明釐清，方能決定後續程序（抵銷抗辯 vs. 提起反訴）。</div>
+          <h4>爭點</h4>
+          <p>辛之主張究屬防禦方法（如抵銷抗辯）或應提起反訴，性質不明時，法院應如何處理？</p>
+          <h4>分析</h4>
+          <p>此正屬第199條之1第2項所規定之特殊闡明義務。辛主張有消滅或妨礙原告請求之事由（即以其對庚之違約金債權主張抵銷），但究竟是單純抵銷抗辯（防禦方法，不生反訴繫屬效果）還是要另立反訴請求辛給付違約金（涉及訴之追加、反訴要件與裁判費），兩者法律效果差異甚大。審判長依法「應闡明之」，屬強制性義務，不可消極放任辛之主張性質不明而逕行審理。</p>
+          <h4>結論</h4>
+          <p>審判長<span class="pos">應闡明辛之主張性質</span>，確認其為單純抵銷抗辯或欲提起反訴，未闡明逕行判決，屬闡明義務之違反。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. 申論題 -->
+    <section id="sec-8">
+      <h2>八、申論練習題與模擬解答</h2>
+      <div class="placeholder">
+        <div class="ph-icon">📝</div>
+        <div>申論題與模擬解答由使用者提供中，尚未加入內容（本講義固定規劃4題）</div>
+        <span class="ph-badge">待補充</span>
+      </div>
+    </section>
+
+    <!-- 9. 速查卡 -->
+    <section id="sec-9">
+      <h2>九、速查卡</h2>
+      <div class="quickcard">
+        <span class="wm">速</span>
+        <h3>民訴§199 一分鐘重點</h3>
+        <ul>
+          <li>第1項：訓示性目的規定（事實＋法律皆須適當完全辯論）</li>
+          <li>第2項：具體闡明作為義務（發問曉諭／令敘明／令補充），權限亦屬義務，違反屬<span class="neg">判決違背法令</span></li>
+          <li>第3項：陪席法官須先「告明審判長」始得發問曉諭，屬權限而非強制義務</li>
+          <li>§199-1Ⅰ：原告可能主張數項法律關係而不明瞭時，應曉諭敘明或補充</li>
+          <li>§199-1Ⅱ：被告抗辯究為防禦方法或反訴不明時，審判長應闡明之</li>
+          <li>界限：闡明僅止於既有聲明陳述之明瞭化，不得逾越辯論主義代當事人創設新主張</li>
+        </ul>
+        <div class="mnemonic">事實法律皆須辯，不明不足應闡明</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  var sections = [
+    {id:'cover', label:'封面'},
+    {id:'sec-1', label:'一、條文原文'},
+    {id:'sec-2', label:'二、條文結構'},
+    {id:'sec-3', label:'三、逐項解析'},
+    {id:'sec-4', label:'四、體系心智圖'},
+    {id:'sec-5', label:'五、學說見解'},
+    {id:'sec-6', label:'六、實務見解'},
+    {id:'sec-7', label:'七、教學案例'},
+    {id:'sec-8', label:'八、申論題', pending:true},
+    {id:'sec-9', label:'九、速查卡'}
+  ];
+  var sidebar = document.getElementById('sidebar');
+  var topnav = document.getElementById('topnav');
+  var links = [];
+  sections.forEach(function(s){
+    var a1 = document.createElement('a');
+    a1.href = '#' + s.id; a1.textContent = s.label;
+    if(s.pending) a1.classList.add('pending');
+    sidebar.appendChild(a1);
+
+    var a2 = document.createElement('a');
+    a2.href = '#' + s.id; a2.textContent = s.label;
+    if(s.pending) a2.classList.add('pending');
+    topnav.appendChild(a2);
+
+    links.push({id:s.id, el:[a1,a2]});
+  });
+
+  function setActive(id){
+    links.forEach(function(l){
+      l.el.forEach(function(a){
+        a.classList.toggle('active', l.id===id);
+      });
+    });
+  }
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ setActive(entry.target.id); }
+    });
+  }, {rootMargin:'-40% 0px -50% 0px', threshold:0});
+
+  sections.forEach(function(s){
+    var el = document.getElementById(s.id);
+    if(el) observer.observe(el);
+  });
+
+  document.querySelectorAll('nav a, .topnav a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.getElementById(a.getAttribute('href').slice(1));
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
