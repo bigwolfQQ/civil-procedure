@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民事訴訟法第56條——必要共同訴訟之訴訟行為效力</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233b;
+    --indigo:#2c4a76;
+    --paper-outer:#f3ede0;
+    --paper-inner:#fbf8f1;
+    --paper-card:#fffdf8;
+    --seal:#9c2b3a;
+    --brass:#a9832f;
+    --border:#ddd3bf;
+    --ink-45: rgba(22,35,59,.45);
+    --ink-70: rgba(22,35,59,.7);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper-outer); color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif; line-height:1.75;
+  }
+  h1,h2,h3,h4,.serif{font-family:'Noto Serif TC',serif;}
+  a{color:var(--indigo);}
+  .layout{display:flex; max-width:1280px; margin:0 auto;}
+  /* sidebar */
+  .sidebar{
+    width:240px; flex-shrink:0; position:sticky; top:0; height:100vh;
+    overflow-y:auto; padding:28px 18px; border-right:1px solid var(--border);
+  }
+  .sidebar .brand{font-size:13px; color:var(--ink-45); margin-bottom:18px; letter-spacing:.05em;}
+  .sidebar nav a{
+    display:block; padding:8px 10px; margin-bottom:2px; border-radius:6px;
+    text-decoration:none; color:var(--ink-70); font-size:14px;
+  }
+  .sidebar nav a.active{background:var(--indigo); color:#fbf8f1;}
+  .sidebar nav a.todo{color:var(--ink-45); font-style:italic;}
+  /* mobile nav */
+  .mobile-nav{display:none; position:sticky; top:0; z-index:20; background:var(--paper-outer);
+    border-bottom:1px solid var(--border); padding:10px 12px; overflow-x:auto; white-space:nowrap;}
+  .mobile-nav a{display:inline-block; padding:6px 12px; margin-right:6px; border-radius:20px;
+    background:var(--paper-card); border:1px solid var(--border); color:var(--ink-70); font-size:13px; text-decoration:none;}
+  .mobile-nav a.active{background:var(--indigo); color:#fff; border-color:var(--indigo);}
+  main{flex:1; min-width:0; background:var(--paper-inner); box-shadow:-6px 0 14px -12px rgba(22,35,59,.25);}
+  section{padding:52px 56px; border-bottom:1px dashed var(--border);}
+  section:last-child{border-bottom:none;}
+  .eyebrow{font-size:12px; letter-spacing:.12em; color:var(--brass); font-weight:700; margin-bottom:10px;}
+  h2.section-title{font-size:26px; font-weight:700; border-left:4px solid var(--indigo); padding-left:14px; margin:0 0 24px;}
+  h3.sub-title{font-size:18px; font-weight:700; border-left:3px solid var(--brass); padding-left:10px; margin:28px 0 12px;}
+
+  /* cover */
+  .cover{position:relative; padding:64px 56px 48px; background:linear-gradient(180deg,var(--paper-inner),var(--paper-card));}
+  .seal-mark{
+    position:absolute; top:44px; right:56px; width:92px; height:92px; border:3px solid var(--seal);
+    border-radius:8px; transform:rotate(8deg); display:flex; align-items:center; justify-content:center;
+    writing-mode:vertical-rl; color:var(--seal); font-family:'Noto Serif TC',serif; font-weight:900; font-size:22px;
+    letter-spacing:.15em; opacity:.85;
+  }
+  .cover h1{font-size:34px; font-weight:900; margin:6px 0 8px; max-width:640px;}
+  .cover .subtitle{color:var(--ink-70); font-size:15px; margin-bottom:4px;}
+  .cover-meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
+  .cover-meta span{font-size:12px; padding:4px 10px; border-radius:20px; border:1px solid var(--indigo); color:var(--indigo); background:var(--paper-card);}
+  .cover-meta .ver-badge{border-color:var(--seal); color:var(--seal);}
+
+  /* article box */
+  .article-box{position:relative; background:var(--paper-card); border-left:3px solid var(--indigo);
+    border-radius:4px; padding:22px 24px; box-shadow:0 1px 2px rgba(22,35,59,.06); overflow:hidden; margin-bottom:18px;}
+  .article-box .num-watermark{position:absolute; right:10px; bottom:-14px; font-size:110px; font-family:'Noto Serif TC',serif;
+    font-weight:900; color:var(--ink); opacity:.06; line-height:1;}
+  .article-box .item{margin:0 0 6px;}
+  .article-box .roman{font-weight:700; color:var(--indigo); margin-right:6px;}
+
+  table{width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:14px;}
+  th,td{border:1px solid var(--border); padding:10px 12px; text-align:left; vertical-align:top;}
+  th{background:var(--ink); color:var(--paper-inner); font-weight:700;}
+  tr:nth-child(even) td{background:#f6f1e6;}
+  tr:nth-child(odd) td{background:var(--paper-card);}
+  .neg{color:var(--seal); font-weight:700;}
+  .pos{font-weight:700; background-image:linear-gradient(transparent 65%, rgba(169,131,47,.35) 0);}
+
+  .placeholder{border:2px dashed var(--brass); border-radius:8px; padding:26px; text-align:center; color:var(--ink-45); background:repeating-linear-gradient(135deg, var(--paper-card), var(--paper-card) 10px, #f6f1e6 10px, #f6f1e6 20px);}
+  .placeholder .icon{font-size:26px; margin-bottom:6px;}
+  .badge-todo{display:inline-block; margin-top:10px; font-size:12px; padding:3px 10px; border-radius:20px; background:var(--brass); color:#fff;}
+  .badge-unverified{display:inline-block; margin-top:4px; font-size:12px; padding:3px 10px; border-radius:20px; background:var(--seal); color:#fff;}
+
+  .case-card, .quiz-card{background:var(--paper-card); border-radius:6px; box-shadow:0 1px 2px rgba(22,35,59,.08), 0 6px 16px -10px rgba(22,35,59,.25); margin-bottom:22px; overflow:hidden;}
+  .case-card .hd{background:var(--indigo); color:#fbf8f1; padding:10px 18px; font-weight:700; font-family:'Noto Serif TC',serif;}
+  .quiz-card .hd{background:var(--ink); color:#fbf8f1; padding:10px 18px; font-weight:700; font-family:'Noto Serif TC',serif;}
+  .case-card .bd, .quiz-card .bd{padding:18px 20px;}
+  .case-card .bd h5, .quiz-card .bd h5{margin:14px 0 6px; font-size:14px; color:var(--brass); font-family:'Noto Serif TC',serif;}
+  .case-card .bd h5:first-child{margin-top:0;}
+
+  .flow-wrap, .relation-wrap{background:var(--paper-card); border:1px solid var(--border); border-radius:8px; padding:16px; margin:16px 0;}
+  .flow-note{text-align:center; color:var(--ink-45); font-size:13px; margin-top:8px;}
+
+  .quickcard{background:var(--ink); color:var(--paper-inner); border-radius:10px; padding:28px 30px; position:relative; overflow:hidden;}
+  .quickcard .wm{position:absolute; right:14px; bottom:-30px; font-size:150px; font-family:'Noto Serif TC',serif; font-weight:900; opacity:.08;}
+  .quickcard .mnemonic{background:var(--seal); border-radius:6px; padding:14px 18px; font-family:'Noto Serif TC',serif; font-size:18px; font-weight:700; margin-top:14px; letter-spacing:.05em;}
+
+  .glossary{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .glossary .g-card{background:var(--paper-card); border:1px solid var(--border); border-radius:6px; padding:14px 16px;}
+  .glossary .g-card dt{font-family:'Noto Serif TC',serif; font-weight:700; color:var(--indigo); margin-bottom:4px;}
+  .glossary .g-card dd{margin:0; font-size:13.5px; color:var(--ink-70);}
+
+  .link-note{border:1px dashed var(--brass); border-radius:8px; padding:16px 20px; background:var(--paper-card);}
+
+  .mindmap{display:flex; flex-direction:column; align-items:center; gap:0;}
+  .mm-root{background:var(--ink); color:#fbf8f1; padding:12px 22px; border-radius:8px; font-family:'Noto Serif TC',serif; font-weight:700; font-size:17px; margin-bottom:18px;}
+  .mm-branches{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; width:100%;}
+  .mm-branch{background:var(--paper-card); border:1px solid var(--indigo); border-radius:8px; padding:12px 14px;}
+  .mm-branch .b-title{font-family:'Noto Serif TC',serif; font-weight:700; color:var(--indigo); font-size:14px; margin-bottom:6px; border-bottom:1px solid var(--border); padding-bottom:4px;}
+  .mm-branch ul{margin:0; padding-left:16px; font-size:12.5px; color:var(--ink-70);}
+  .mm-branch li{margin-bottom:3px;}
+
+  @media (max-width:980px){
+    .sidebar{display:none;}
+    .mobile-nav{display:block;}
+    section{padding:36px 20px;}
+    .cover{padding:44px 20px 32px;}
+    .seal-mark{top:20px; right:20px; width:70px; height:70px; font-size:16px;}
+    .glossary{grid-template-columns:1fr;}
+    .mm-branches{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav"></div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand serif">民事訴訟法講義</div>
+    <nav id="sideNav"></nav>
+  </aside>
+
+  <main>
+
+    <section class="cover" id="s0">
+      <div class="seal-mark">合一確定</div>
+      <div class="eyebrow">民事訴訟法・第一編 總則・第二章 當事人・第二節 共同訴訟</div>
+      <h1>民事訴訟法第56條<br>必要共同訴訟之訴訟行為效力</h1>
+      <div class="subtitle">訴訟標的合一確定時，共同訴訟人一人行為如何牽動全體？</div>
+      <div class="cover-meta">
+        <span class="ver-badge">v1.0</span>
+        <span class="meta-date">2026-08-26</span>
+        <span><img src="https://visitor-badge.laobi.icu/badge?page_id=mjib007.civil-procedure.56" alt="visitors" style="vertical-align:middle;height:14px;"></span>
+      </div>
+    </section>
+
+    <section id="s1">
+      <div class="eyebrow">Step 2 · 條文原文</div>
+      <h2 class="section-title">一、條文原文</h2>
+      <div class="article-box">
+        <div class="num-watermark">56</div>
+        <p class="item"><span class="roman">Ⅰ</span>訴訟標的對於共同訴訟之各人必須合一確定者，適用下列各款之規定：</p>
+        <p class="item">　一、共同訴訟人中一人之行為有利益於共同訴訟人者，其效力及於全體；不利益者，對於全體不生效力。</p>
+        <p class="item">　二、他造對於共同訴訟人中一人之行為，其效力及於全體。</p>
+        <p class="item">　三、共同訴訟人中之一人生有訴訟當然停止或裁定停止之原因者，其當然停止或裁定停止之效力及於全體。</p>
+        <p class="item"><span class="roman">Ⅱ</span>前項共同訴訟人中一人提起上訴，其他共同訴訟人為受輔助宣告之人時，準用第四十五條之一第二項之規定。</p>
+      </div>
+      <h3 class="sub-title">關聯條文（原文照錄，供對照）</h3>
+      <div class="article-box"><div class="num-watermark">45-1</div>
+        <p class="item"><b>第45條之1第2項</b>：受輔助宣告之人為捨棄、認諾、撤回或和解，應經輔助人以書面特別同意。</p>
+      </div>
+      <div class="article-box"><div class="num-watermark">55</div>
+        <p class="item"><b>第55條</b>：共同訴訟中，一人之行為或他造對於共同訴訟人中一人之行為及關於其一人所生之事項，除別有規定外，其利害不及於他共同訴訟人。</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <div class="eyebrow">Step 3 · 條文結構</div>
+      <h2 class="section-title">二、條文結構解析</h2>
+      <h3 class="sub-title">適用前提：必要共同訴訟（合一確定）</h3>
+      <p>第56條之適用，以「訴訟標的對於共同訴訟之各人<b>必須合一確定</b>」為前提——依實務見解（32年台上2723判例），須為<b>法律上</b>必須一致，而非僅理論上宜歸一致。與第55條之普通共同訴訟形成對照：</p>
+      <table>
+        <tr><th>比較項目</th><th>普通共同訴訟（§55）</th><th>必要共同訴訟（§56）</th></tr>
+        <tr><td>合一確定必要</td><td>無</td><td class="pos">有（法律上必須一致）</td></tr>
+        <tr><td>一人行為之效力</td><td>僅及於行為人本人</td><td class="pos">依款次區分是否及於全體</td></tr>
+        <tr><td>訴訟進行</td><td>各自獨立，可分別辯論</td><td class="pos">須始終一同進行</td></tr>
+      </table>
+
+      <h3 class="sub-title">三款效力擴張總覽表</h3>
+      <table>
+        <tr><th>款次</th><th>行為主體</th><th>效力擴張條件</th><th>效果</th></tr>
+        <tr><td>第1款</td><td>共同訴訟人中一人</td><td>該行為<b>有利</b>／<b>不利</b>於共同訴訟人</td><td>有利者<span class="pos">及於全體</span>；不利者<span class="neg">對全體不生效力</span></td></tr>
+        <tr><td>第2款</td><td>他造（對造）</td><td>對共同訴訟人中一人為訴訟行為</td><td class="pos">效力一律及於全體</td></tr>
+        <tr><td>第3款</td><td>共同訴訟人中一人</td><td>發生訴訟當然停止或裁定停止之原因</td><td class="pos">停止效力及於全體</td></tr>
+        <tr><td>第2項</td><td>共同訴訟人中一人</td><td>提起上訴，且其他共同訴訟人為受輔助宣告之人</td><td>準用§45-1Ⅱ，捨棄、認諾、撤回、和解須經輔助人書面特別同意</td></tr>
+      </table>
+    </section>
+
+    <section id="s3">
+      <div class="eyebrow">Step 3 · 逐項解析</div>
+      <h2 class="section-title">三、各項各款逐項解析</h2>
+
+      <h3 class="sub-title">第1項第1款：己方行為之有利不利</h3>
+      <p>本款規範共同訴訟人「自己一方」所為訴訟行為（如自認、捨棄、上訴、撤回等）之效力擴張，核心在於「有利／不利」之判斷標準：</p>
+      <ul>
+        <li><b>實務（形式觀察說）</b>：依52年台上1930判例，應就行為<b>當時形式上觀之</b>是否有利不利，非俟裁判結果確定後再回頭論斷。故共同訴訟人一人提起上訴，在上訴審就實體內容裁判前，難謂該上訴對他共同訴訟人不利，效力應及於全體，視為全體所為之上訴。</li>
+        <li><b>學說（實質觀察說，來源待核實）</b>：學說另有主張應依訴訟資料實質內容判斷有利不利，而非僅形式判斷 <span class="badge-unverified">來源待核實</span></li>
+      </ul>
+
+      <h3 class="sub-title">第1項第2款：他造行為之效力擴張</h3>
+      <p>與第1款不同，本款規範「他造」（對造當事人）對共同訴訟人中一人所為之訴訟行為（如向其中一人為請求、送達、聲明等），<b>不區分有利不利</b>，效力一律及於全體共同訴訟人。此設計目的在避免必要共同訴訟因對造行為對象不同而產生訴訟資料分裂。</p>
+
+      <h3 class="sub-title">第1項第3款：程序停止事由之效力擴張</h3>
+      <p>共同訴訟人中一人發生訴訟當然停止（如死亡、破產等）或經法院裁定停止之原因者，該停止效力及於全體共同訴訟人，程序須同步停止，以維持必要共同訴訟「始終一同進行」之要求。</p>
+
+      <h3 class="sub-title">第2項：受輔助宣告人之上訴特別規定</h3>
+      <p>共同訴訟人中一人提起上訴時，依第1項第1款原則上效力及於全體（視為全體上訴）。但若其他共同訴訟人中有受輔助宣告之人，為保障其意思自主，該部分準用第45條之1第2項——即該受輔助宣告人若要為捨棄、認諾、撤回或和解等處分性訴訟行為，仍須經輔助人書面特別同意，不因第1項效力擴張而免除此一保護要求。</p>
+
+      <h3 class="sub-title">效力擴張關係示意圖</h3>
+      <div class="relation-wrap">
+        <svg viewBox="0 0 640 300" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif">
+          <!-- 共同訴訟人 -->
+          <rect x="30" y="30" width="130" height="50" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="95" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">共同訴訟人A</text>
+          <text x="95" y="68" text-anchor="middle" font-size="10" fill="#5b6472">（為訴訟行為）</text>
+
+          <rect x="30" y="220" width="130" height="50" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="95" y="242" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">共同訴訟人B、C…</text>
+          <text x="95" y="258" text-anchor="middle" font-size="10" fill="#5b6472">（效力被及）</text>
+
+          <!-- 有利分支 -->
+          <path d="M160 45 L 330 45" stroke="#a9832f" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="245" y="35" text-anchor="middle" font-size="11" fill="#a9832f">款1・有利</text>
+          <rect x="330" y="20" width="140" height="50" rx="6" fill="#fffdf8" stroke="#a9832f" stroke-width="2"/>
+          <text x="400" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">效力及於全體</text>
+          <text x="400" y="58" text-anchor="middle" font-size="10" fill="#5b6472">（形式觀察說）</text>
+
+          <!-- 不利分支 -->
+          <path d="M160 70 L 330 70" stroke="#9c2b3a" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrowRed)"/>
+          <text x="245" y="90" text-anchor="middle" font-size="11" fill="#9c2b3a">款1・不利</text>
+          <rect x="330" y="90" width="140" height="50" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2"/>
+          <text x="400" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#9c2b3a">對全體不生效力</text>
+
+          <!-- 他造 -->
+          <rect x="30" y="130" width="130" height="50" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="95" y="152" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">他造（對造）</text>
+          <text x="95" y="168" text-anchor="middle" font-size="10" fill="#5b6472">（對A為行為）</text>
+          <path d="M160 155 L 330 155" stroke="#2c4a76" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="245" y="145" text-anchor="middle" font-size="11" fill="#2c4a76">款2・一律及於全體</text>
+          <rect x="330" y="160" width="140" height="50" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+          <text x="400" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">效力及於全體</text>
+
+          <path d="M95 80 L 95 220" stroke="#5b6472" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M95 180 L 95 220" stroke="#5b6472" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2c4a76"/></marker>
+            <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#9c2b3a"/></marker>
+          </defs>
+        </svg>
+        <div class="flow-note">紅色虛線＝不利行為效力不擴張；其餘均擴張及於全體共同訴訟人</div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <div class="eyebrow">Step 3.6 · 學說見解</div>
+      <h2 class="section-title">四、學說見解</h2>
+      <div class="case-card">
+        <div class="hd">有利不利之判斷標準：形式觀察說 vs 實質觀察說</div>
+        <div class="bd">
+          <h5>學說主張</h5>
+          <p>學說另有主張應採「實質觀察說」，即應依訴訟資料之實質內容判斷該行為對共同訴訟人是否有利，而非僅以行為當時形式上觀之，藉此更貼近合一確定之實質保護目的。<span class="badge-unverified">來源待核實，尚未查得具體學者姓名與出處頁碼</span></p>
+          <p style="font-size:13px;color:var(--ink-45);">提醒：本段見解整理自網路聚合資料，未經原始學術文獻（如教科書、期刊）逐一核實，引用前請自行查證原始出處。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <div class="eyebrow">Step 3.5 · 實務見解</div>
+      <h2 class="section-title">五、實務見解</h2>
+      <table>
+        <tr><th>案號</th><th>爭點摘要</th></tr>
+        <tr><td>最高法院32年上字第2723號判例</td><td>闡明「必須合一確定」之意義：限於法律上必須合一確定者，若各共同訴訟人所受判決僅理論上應為一致，非屬本條所稱合一確定。</td></tr>
+        <tr><td>最高法院52年台上字第1930號判例</td><td>第1項第1款「有利不利」之判斷採形式觀察說：以行為當時形式上觀之，非以嗣後裁判結果論；共同訴訟人一人提起上訴，上訴審未裁判前難謂不利，效力及於全體，視為全體所為之上訴。</td></tr>
+        <tr><td>最高法院106年台上字第2967號判決</td><td>重申52年台上1930判例之形式觀察說，並涉及「確認他人間法律關係不存在之訴」於兩造均爭執法律關係存在時，屬固有必要共同訴訟之判斷。</td></tr>
+      </table>
+      <p style="font-size:13px;color:var(--ink-45);">上開裁判全文，建議至司法院裁判書查詢系統（<a href="https://judgment.judicial.gov.tw/" target="_blank">https://judgment.judicial.gov.tw/</a>）輸入案號自行查閱核對。</p>
+    </section>
+
+    <section id="s6">
+      <div class="eyebrow">Step 2 · 教學案例</div>
+      <h2 class="section-title">六、教學案例（教學用途虛構）</h2>
+
+      <div class="case-card">
+        <div class="hd">案例一・共有物返還訴訟中一人提起上訴（款1・有利行為）</div>
+        <div class="bd">
+          <h5>事實</h5>
+          <p>甲、乙、丙三人為某土地之公同共有人，對第三人丁提起返還共有物之訴（固有必要共同訴訟）。第一審判決三人敗訴，僅甲一人於上訴期間內提起上訴，乙、丙均未表示意見。</p>
+          <h5>爭點</h5>
+          <p>甲一人提起上訴之效力，是否及於未表示意見之乙、丙？</p>
+          <h5>分析</h5>
+          <p>依第56條第1項第1款，本件訴訟標的對甲乙丙必須合一確定，屬固有必要共同訴訟。依實務形式觀察說，甲提起上訴之行為，在上訴審就實體內容裁判前，難謂對乙、丙不利，應視為對共同訴訟人有利之行為，效力及於全體。故乙、丙雖未自行上訴，仍應併列為上訴人，第一審判決對三人均未確定。</p>
+          <h5>結論</h5>
+          <p>甲之上訴效力及於乙、丙全體，第二審應就三人之訴訟標的合一審理。</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="hd">案例二・共同被告一人為認諾（款1・不利行為）</div>
+        <div class="bd">
+          <h5>事實</h5>
+          <p>債權人戊對連帶保證且訴訟標的須合一確定之共同被告己、庚提起分割共有物之訴（假設本件依具體事實構成必要共同訴訟）。言詞辯論期日，己當庭為訴訟標的之認諾，庚則到庭爭執並提出反對事實。</p>
+          <h5>爭點</h5>
+          <p>己一人所為之認諾，效力是否及於庚？</p>
+          <h5>分析</h5>
+          <p>認諾為對己方不利之處分行為。依第56條第1項第1款後段，共同訴訟人一人所為不利益之行為，對全體不生效力。故己雖為認諾，法院仍不得逕以認諾判決拘束庚，應就庚爭執部分繼續審理，並依合一確定之要求，最終為全體共同訴訟人為同一內容之裁判。</p>
+          <h5>結論</h5>
+          <p>己之認諾對庚不生效力，法院應續行審理，不得割裂裁判。</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="hd">案例三・他造對其中一人為訴之撤回意思表示（款2）</div>
+        <div class="bd">
+          <h5>事實</h5>
+          <p>原告辛對必要共同訴訟之被告壬、癸提起確認合夥關係存在之訴。訴訟進行中，辛僅向壬表示撤回對其之訴，癸則未收受撤回之意思表示。</p>
+          <h5>爭點</h5>
+          <p>辛對壬一人所為撤回之意思表示，效力是否及於癸？</p>
+          <h5>分析</h5>
+          <p>依第56條第1項第2款，他造（辛）對共同訴訟人中一人（壬）所為之訴訟行為，不問有利不利，效力一律及於全體。蓋必要共同訴訟不容許就同一訴訟標的對部分共同被告單獨撤回、對其餘部分繼續審理，否則將產生裁判分裂之結果。</p>
+          <h5>結論</h5>
+          <p>辛對壬撤回訴訟之效力，及於癸，本件訴訟視為對壬、癸全體均已撤回（是否合法撤回仍須另依撤回要件審查）。</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="hd">案例四・一人受監護宣告裁定停止，且另一人受輔助宣告（款3＋第2項）</div>
+        <div class="bd">
+          <h5>事實</h5>
+          <p>甲、乙、丙為必要共同訴訟之共同原告，第一審敗訴後，甲提起上訴。上訴繫屬中，乙經法院裁定停止訴訟（因喪失意思能力聲請監護宣告中），丙則已受輔助宣告，尚未經輔助人同意本件上訴之後續處分行為。</p>
+          <div class="relation-wrap">
+            <svg viewBox="0 0 640 220" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif">
+              <rect x="20" y="20" width="120" height="50" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+              <text x="80" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">甲</text>
+              <text x="80" y="58" text-anchor="middle" font-size="10" fill="#5b6472">提起上訴</text>
+
+              <rect x="20" y="90" width="120" height="50" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2"/>
+              <text x="80" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">乙</text>
+              <text x="80" y="128" text-anchor="middle" font-size="10" fill="#9c2b3a">裁定停止原因</text>
+
+              <rect x="20" y="160" width="120" height="50" rx="6" fill="#fffdf8" stroke="#a9832f" stroke-width="2"/>
+              <text x="80" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">丙</text>
+              <text x="80" y="198" text-anchor="middle" font-size="10" fill="#a9832f">受輔助宣告</text>
+
+              <rect x="260" y="20" width="150" height="50" rx="6" fill="#fffdf8" stroke="#2c4a76" stroke-width="2"/>
+              <text x="335" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">上訴效力及於全體</text>
+              <text x="335" y="58" text-anchor="middle" font-size="10" fill="#5b6472">§56Ⅰ①</text>
+
+              <rect x="260" y="90" width="150" height="50" rx="6" fill="#fffdf8" stroke="#9c2b3a" stroke-width="2"/>
+              <text x="335" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#9c2b3a">全體程序停止</text>
+              <text x="335" y="128" text-anchor="middle" font-size="10" fill="#5b6472">§56Ⅰ③</text>
+
+              <rect x="260" y="160" width="150" height="50" rx="6" fill="#fffdf8" stroke="#a9832f" stroke-width="2"/>
+              <text x="335" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#16233b">處分行為須輔助人同意</text>
+              <text x="335" y="198" text-anchor="middle" font-size="10" fill="#5b6472">§56Ⅱ準用§45-1Ⅱ</text>
+
+              <path d="M140 45 L 260 45" stroke="#2c4a76" stroke-width="2" marker-end="url(#arrow2)"/>
+              <path d="M140 115 L 260 115" stroke="#9c2b3a" stroke-width="2" marker-end="url(#arrow2r)"/>
+              <path d="M140 185 L 260 185" stroke="#a9832f" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrow2b)"/>
+              <defs>
+                <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2c4a76"/></marker>
+                <marker id="arrow2r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#9c2b3a"/></marker>
+                <marker id="arrow2b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a9832f"/></marker>
+              </defs>
+            </svg>
+            <div class="flow-note">三種效力互相獨立並存：上訴效力擴張（①）、程序停止擴張（③）、輔助宣告人之特別保護（Ⅱ準用45-1Ⅱ）</div>
+          </div>
+          <h5>分析</h5>
+          <p>本案同時涉及三種效力：其一，甲提起上訴依第1項第1款效力及於乙、丙全體；其二，乙裁定停止之原因依第1項第3款效力及於甲、丙全體，故全案程序均應停止；其三，丙為受輔助宣告之人，依第2項準用第45條之1第2項，日後若涉及捨棄、認諾、撤回或和解等處分行為，仍須經輔助人書面特別同意，不因效力擴張而免除。</p>
+          <h5>結論</h5>
+          <p>本件因乙之停止原因，全案程序停止進行；停止原因消滅後續行程序時，凡涉及丙之處分性訴訟行為，仍須經輔助人書面特別同意，方生效力。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <div class="eyebrow">申論練習</div>
+      <h2 class="section-title">七、申論練習題與模擬解答（AI出題，已獲授權）</h2>
+
+      <div class="quiz-card">
+        <div class="hd">題目一</div>
+        <div class="bd">
+          <p>甲、乙為公同共有房屋之共有人，對占有系爭房屋無權占有之丙提起返還房屋之訴。第一審審理中，甲主動撤回對丙之起訴，乙則明確表示不同意撤回。試問：甲撤回起訴之效力如何？</p>
+          <h5>模擬解答</h5>
+          <p>本件甲、乙基於公同共有關係對丙提起返還房屋之訴，該訴訟標的對甲、乙必須合一確定，屬第56條所稱必要共同訴訟。撤回起訴係使訴訟繫屬溯及消滅之處分行為，對共同訴訟人而言性質上屬不利益之行為，依第56條第1項第1款後段，共同訴訟人一人所為不利益之行為，對全體不生效力。乙已明確表示不同意撤回，足見甲之撤回行為未經全體共同訴訟人合致，依上開規定，甲片面撤回對乙不生效力；而依必要共同訴訟須始終一同進行之要求，甲之撤回對甲自身亦不生獨立效力，法院應續行本件訴訟，就甲、乙之訴訟標的合一審理。</p>
+        </div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="hd">題目二</div>
+        <div class="bd">
+          <p>丁、戊為必要共同訴訟之共同被告，原告己於訴訟繫屬中僅對丁一人為訴之追加聲明擴張，未同時對戊為之。試問：此擴張效力是否及於戊？</p>
+          <h5>模擬解答</h5>
+          <p>訴之聲明擴張屬原告（他造）對共同訴訟人一人所為之訴訟行為。依第56條第1項第2款，他造對共同訴訟人中一人之行為，不區分有利不利，效力一律及於全體共同訴訟人。此係因必要共同訴訟之訴訟標的須合一確定，若容許他造之行為僅對部分共同訴訟人生效，將造成同一訴訟標的在不同被告間產生不一致之審理範圍，有違合一確定之立法目的。故己雖僅對丁為聲明擴張，其效力仍應及於戊，法院應就丁、戊全體共同訴訟人，在擴張後之聲明範圍內合一審理。</p>
+        </div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="hd">題目三</div>
+        <div class="bd">
+          <p>庚、辛為必要共同訴訟之共同原告，第一審敗訴，僅庚一人提起上訴，辛未於上訴期間內表示任何意見。第二審法院審理後認辛應併列為上訴人，惟辛主張其未提起上訴，第二審裁判效力不應及於己。試問：辛之主張有無理由？</p>
+          <h5>模擬解答</h5>
+          <p>本件庚、辛之訴訟標的必須合一確定，屬必要共同訴訟。庚提起上訴之行為，依實務見解（最高法院52年台上字第1930號判例、106年台上字第2967號判決）採形式觀察說，應就行為當時形式上觀之是否有利不利，於上訴審尚未就實體內容為裁判前，難謂該上訴對辛不利，故應認庚之上訴屬有利益於共同訴訟人之行為。依第56條第1項第1款前段，該有利行為之效力及於全體，辛雖未自行上訴，仍應視為與庚共同提起上訴，併列為上訴人。辛主張裁判效力不及於己，與第56條第1項第1款之效力擴張規定不符，尚無理由。</p>
+        </div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="hd">題目四</div>
+        <div class="bd">
+          <p>壬、癸為必要共同訴訟之共同被告，壬於訴訟中受監護宣告，法院依法裁定停止訴訟程序。癸主張其本人並無停止訴訟之原因，請求法院僅就其部分續行審理。試問：癸之請求有無理由？</p>
+          <h5>模擬解答</h5>
+          <p>依第56條第1項第3款，共同訴訟人中之一人生有訴訟當然停止或裁定停止之原因者，其停止效力及於全體共同訴訟人，不問其餘共同訴訟人本身是否具備停止原因。此係因必要共同訴訟之訴訟標的必須合一確定，程序上須始終一同進行，不容許部分共同訴訟人程序停止、部分繼續進行，否則將產生訴訟資料割裂、裁判基礎不一致之結果。本件壬既經法院依法裁定停止訴訟，其效力當然及於癸，縱癸本身無停止原因，仍應隨同停止。癸請求法院僅就其部分續行審理，與第56條第1項第3款規定不符，為無理由。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s8">
+      <div class="eyebrow">心智圖</div>
+      <h2 class="section-title">八、心智圖</h2>
+      <div class="mindmap">
+        <div class="mm-root">民訴§56 必要共同訴訟效力</div>
+        <div class="mm-branches">
+          <div class="mm-branch">
+            <div class="b-title">適用前提</div>
+            <ul>
+              <li>訴訟標的須合一確定</li>
+              <li>法律上必須一致（32年台上2723）</li>
+              <li>與§55普通共同訴訟對照</li>
+            </ul>
+          </div>
+          <div class="mm-branch">
+            <div class="b-title">三款效力擴張</div>
+            <ul>
+              <li>①己方行為：有利及全體／不利不及全體</li>
+              <li>②他造行為：一律及於全體</li>
+              <li>③停止事由：一律及於全體</li>
+            </ul>
+          </div>
+          <div class="mm-branch">
+            <div class="b-title">第2項特別規定</div>
+            <ul>
+              <li>共同訴訟人一人上訴</li>
+              <li>他人受輔助宣告</li>
+              <li>準用§45-1Ⅱ書面特別同意</li>
+            </ul>
+          </div>
+          <div class="mm-branch">
+            <div class="b-title">實務標準</div>
+            <ul>
+              <li>形式觀察說（52台上1930）</li>
+              <li>106台上2967重申</li>
+              <li>學說：實質觀察說（待核實）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s9">
+      <div class="eyebrow">專業名詞</div>
+      <h2 class="section-title">九、專業名詞解釋</h2>
+      <dl class="glossary">
+        <div class="g-card"><dt>必要共同訴訟</dt><dd>訴訟標的對於共同訴訟人必須合一確定之共同訴訟，區分為「固有必要共同訴訟」（須全體共同起訴或被訴，欠缺當事人適格）與「類似必要共同訴訟」（得個別起訴，但一旦合併即受合一確定拘束）。</dd></div>
+        <div class="g-card"><dt>合一確定</dt><dd>指法院對共同訴訟人全體所為之裁判，在法律上必須內容一致，不得對部分共同訴訟人為相異之判斷。</dd></div>
+        <div class="g-card"><dt>共同訴訟人獨立原則（§55）</dt><dd>普通共同訴訟下，一人之行為或他造對一人之行為，其利害原則上不及於其他共同訴訟人，各自獨立進行訴訟。</dd></div>
+        <div class="g-card"><dt>形式觀察說</dt><dd>判斷共同訴訟人一人行為是否「有利不利」時，應就行為當時外觀形式判斷，不待裁判結果確定後回溯認定，為現行實務所採之標準。</dd></div>
+        <div class="g-card"><dt>訴訟當然停止／裁定停止</dt><dd>當然停止指法定事由發生（如當事人死亡）當然發生停止效果，無須法院裁定；裁定停止則須由法院依聲請或依職權以裁定宣示停止訴訟程序。</dd></div>
+        <div class="g-card"><dt>受輔助宣告之人</dt><dd>因精神障礙或心智缺陷，致其為意思表示或受意思表示、辨識意思表示效果之能力顯有不足，經法院為輔助宣告之人，其為特定重要訴訟行為時，依法須經輔助人同意。</dd></div>
+      </dl>
+    </section>
+
+    <section id="s10">
+      <div class="eyebrow">速查卡</div>
+      <h2 class="section-title">十、速查卡</h2>
+      <div class="quickcard">
+        <div class="wm">56</div>
+        <p style="margin:0 0 8px;">前提：訴訟標的必須<b>合一確定</b>（法律上，非僅理論上）</p>
+        <p style="margin:0 0 4px;">① 己方行為：有利及全體／不利不及全體（形式觀察說）</p>
+        <p style="margin:0 0 4px;">② 他造行為：一律及於全體</p>
+        <p style="margin:0;">③ 停止事由：一律及於全體｜Ⅱ受輔助宣告人處分行為仍須輔助人書面同意</p>
+        <div class="mnemonic">己利及眾，己害獨擔；他造一擊，全體同當</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+const sections = [
+  {id:'s0', label:'封面'},
+  {id:'s1', label:'一、條文原文'},
+  {id:'s2', label:'二、條文結構'},
+  {id:'s3', label:'三、逐項解析'},
+  {id:'s4', label:'四、學說見解'},
+  {id:'s5', label:'五、實務見解'},
+  {id:'s6', label:'六、教學案例'},
+  {id:'s7', label:'七、申論練習'},
+  {id:'s8', label:'八、心智圖'},
+  {id:'s9', label:'九、專業名詞'},
+  {id:'s10', label:'十、速查卡'}
+];
+const sideNav = document.getElementById('sideNav');
+const mobileNav = document.getElementById('mobileNav');
+sections.forEach(s=>{
+  const a1 = document.createElement('a'); a1.href='#'+s.id; a1.textContent=s.label; a1.dataset.id=s.id;
+  sideNav.appendChild(a1);
+  const a2 = document.createElement('a'); a2.href='#'+s.id; a2.textContent=s.label; a2.dataset.id=s.id;
+  mobileNav.appendChild(a2);
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    document.getElementById(a.dataset.id).scrollIntoView({behavior:'smooth'});
+  });
+});
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      document.querySelectorAll('a[data-id]').forEach(a=>{
+        a.classList.toggle('active', a.dataset.id === entry.target.id);
+      });
+    }
+  });
+}, {rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=> observer.observe(document.getElementById(s.id)));
+</script>
+</body>
+</html>
