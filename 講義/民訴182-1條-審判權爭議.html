@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民事訴訟法第182條之1｜審判權爭議之處理</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16233b;--indigo:#2c4a76;--paper:#f3ede0;--inner:#fbf8f1;--card:#fffdf8;--red:#9c2b3a;--brass:#a9832f;--line:#ddd3bf;--ink45:#8a8f99}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 "Noto Sans TC",sans-serif}
+h1,h2,h3,.serif{font-family:"Noto Serif TC",serif}
+nav{position:fixed;left:0;top:0;width:240px;height:100vh;padding:28px 18px;background:var(--paper);overflow:auto}
+nav b{display:block;font-family:"Noto Serif TC";margin-bottom:12px}
+nav a{display:block;padding:6px 10px;color:var(--ink);text-decoration:none;border-left:3px solid transparent;font-size:14px}
+nav a.on{border-color:var(--brass);background:var(--inner);font-weight:700}nav a.todo{color:var(--ink45)}
+main{margin-left:240px;background:var(--inner);padding:48px 56px;box-shadow:-6px 0 14px rgba(22,35,59,.06);min-height:100vh}
+section{margin-bottom:56px;scroll-margin-top:16px}
+h2{font-size:24px;border-left:5px solid var(--brass);padding-left:12px;margin:0 0 18px}
+h3{font-size:17px;border-left:3px solid var(--indigo);padding-left:10px;margin:22px 0 8px}
+.cover{position:relative;padding:24px 0 40px;border-bottom:2px solid var(--line)}
+.eye{color:var(--brass);letter-spacing:.2em;font-size:13px}
+.cover h1{font-size:38px;font-weight:900;margin:8px 0}
+.seal-mark{position:absolute;right:8px;top:12px;transform:rotate(8deg);border:3px solid var(--red);color:var(--red);width:64px;padding:8px 0;text-align:center;font:900 20px/1.3 "Noto Serif TC";writing-mode:vertical-rl;text-orientation:upright;height:110px}
+.cover-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;margin-top:10px}
+.ver-badge{border:1px solid var(--red);color:var(--red);padding:0 10px;border-radius:4px}
+.meta-date{border:1px solid var(--indigo);color:var(--ink45);padding:0 10px;border-radius:4px}
+.toc{margin-top:16px;font-size:14px;color:var(--ink45)}
+.article-box{position:relative;background:var(--card);border-left:3px solid var(--indigo);padding:18px 22px;overflow:hidden;border-radius:0 6px 6px 0;box-shadow:0 1px 2px rgba(22,35,59,.1),0 8px 20px rgba(22,35,59,.06)}
+.article-box::after{content:attr(data-no);position:absolute;right:10px;bottom:-22px;font:900 96px "Noto Serif TC";opacity:.06}
+.article-box p{margin:6px 0;position:relative}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card)}
+th{background:var(--ink);color:var(--paper);padding:8px;text-align:left}td{padding:8px;border:1px solid var(--line);vertical-align:top}
+tr:nth-child(odd) td{background:#fffdf8}tr:nth-child(even) td{background:#f6f1e6}
+.tblwrap{overflow-x:auto}
+.yes{font-weight:700;background:linear-gradient(transparent 62%,rgba(169,131,47,.35) 0)}.no{font-weight:700;color:var(--red)}
+.placeholder{border:2px dashed var(--brass);background:repeating-linear-gradient(45deg,rgba(169,131,47,.06) 0 10px,transparent 10px 20px);text-align:center;padding:26px 16px;color:var(--ink45);border-radius:6px;margin:10px 0}
+.placeholder i{font-size:26px;display:block;font-style:normal}
+.badge{display:inline-block;background:var(--brass);color:#fff;padding:0 12px;border-radius:99px;font-size:12px;margin-top:6px}
+.card{background:var(--card);border-radius:6px;margin:16px 0;overflow:hidden;box-shadow:0 1px 2px rgba(22,35,59,.1),0 10px 24px rgba(22,35,59,.08)}
+.card header{background:var(--indigo);color:#fff;padding:8px 16px;font:600 16px "Noto Serif TC"}.card.q header{background:var(--ink)}
+.card .bd{padding:14px 18px}.card p{margin:6px 0}
+.src{font-size:13px;color:var(--ink45);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+.warn{border-left:4px solid var(--red);background:#fbf1f0;padding:10px 14px;font-size:14px;margin:10px 0}
+.quick{position:relative;background:var(--ink);color:var(--paper);padding:26px;border-radius:6px;overflow:hidden}
+.quick::after{content:"速";position:absolute;right:14px;bottom:-30px;font:900 130px "Noto Serif TC";opacity:.08}
+.quick li{margin:4px 0}.motto{background:var(--red);padding:12px 16px;border-radius:4px;font:700 18px "Noto Serif TC";margin-top:14px;position:relative;z-index:1}
+li a,.src a{color:var(--indigo)}
+@media(max-width:980px){nav{position:sticky;width:auto;height:auto;display:flex;gap:6px;overflow-x:auto;padding:8px 10px;z-index:9}nav b{display:none}nav a{white-space:nowrap;border:1px solid var(--line);border-radius:99px;padding:3px 12px}main{margin:0;padding:24px 18px;box-shadow:none}.cover h1{font-size:28px}}
+.link-note{border:2px dashed var(--brass);border-radius:6px;padding:12px 16px;margin-top:28px;font-size:14px;background:var(--card)}
+</style></head><body>
+<nav id="nav"><b>目錄</b>
+<a href="#s1">一、封面</a><a href="#s2">二、條文原文</a><a href="#s3">三、條文結構</a><a href="#s4">四、逐項解析</a>
+<a href="#s5" class="todo">五、學說見解</a><a href="#s6">六、實務見解</a><a href="#s7">七、教學案例</a><a href="#s8" class="todo">八、申論題</a><a href="#s9">九、速查卡</a></nav>
+<main>
+<section id="s1" class="cover"><div class="eye">民事訴訟法 ／ 第二編 第一審程序 ／ 通則・訴訟程序之停止</div>
+<h1>第182條之1<br><small style="font-size:20px;font-weight:600">審判權消極衝突之處理</small></h1><div class="seal-mark">審判權</div>
+<div class="cover-meta"><span class="ver-badge">v1.0</span><span class="meta-date">2026-09-30</span>
+<img alt="visitors" src="https://visitor-badge.laobi.icu/badge?page_id=mjib007.civil-procedure-interpretation.182-1"></div>
+<div class="toc">教學案例與申論題均為 AI 依條文虛構／出題，僅供教學用途。</div></section>
+
+<section id="s2"><h2>二、條文原文</h2>
+<div class="article-box" data-no="182-1">
+<p><b>民事訴訟法第182條之1</b></p>
+<p>Ⅰ 普通法院就行政法院移送之訴訟認無審判權者，應以裁定停止訴訟程序，並請求最高法院指定有審判權之管轄法院。但有下列情形之一者，不在此限：</p>
+<p>　一、移送經最高行政法院裁判確定。</p><p>　二、當事人合意願由普通法院裁判。</p>
+<p>Ⅱ 前項第二款之合意，應記明筆錄或以文書證之。</p>
+<p>Ⅲ 最高法院就第一項請求為裁定前，應使當事人有陳述意見之機會。</p>
+<p>Ⅳ 普通法院就行政法院移送之訴訟為裁判者，上級審法院不得以其無審判權而廢棄之。</p></div>
+<h3>關聯條文（使用者提供）</h3>
+<div class="article-box" data-no="249"><p><b>民事訴訟法第249條Ⅰ</b>　原告之訴，有下列各款情形之一者，法院應以裁定駁回之。但其情形可以補正者，審判長應定期間先命補正：一、訴訟事件不屬普通法院之審判權，不能依法移送。……七、當事人就已繫屬於不同審判權法院之事件更行起訴、起訴違背第二百五十三條、第二百六十三條第二項之規定，或其訴訟標的為確定判決效力所及。（其餘各款略）</p></div>
+<div class="article-box" data-no="7-4"><p><b>法院組織法第7-4條</b>　前條第一項移送之裁定確定時，受移送法院認其亦無審判權者，應以裁定停止訴訟程序，並向其所屬審判權之終審法院請求指定有審判權之管轄法院。但有下列情形之一者，不在此限：一、原法院所屬審判權之終審法院已認原法院無審判權而為裁判。二、民事法院受理由行政法院移送之訴訟，當事人合意願由民事法院為裁判。前項所稱終審法院，指最高法院、最高行政法院或懲戒法院第二審合議庭。第一項但書第二款之合意，應記明筆錄或以文書證之。（第四、五項略）</p></div>
+<p style="font-size:14px;color:var(--ink45)">法院組織法第7-2、7-3、7-5至7-11條全文由使用者提供，本講義引用時標明條號。</p></section>
+
+<section id="s3"><h2>三、條文結構</h2>
+<div class="tblwrap"><table><tr><th>§182-1</th><th>內容</th><th>法院組織法對應</th></tr>
+<tr><td>Ⅰ本文</td><td>認無審判權→停止訴訟＋請求最高法院指定</td><td>§7-4Ⅰ本文（以移送裁定確定為前提）</td></tr>
+<tr><td>Ⅰ但書①</td><td>移送經最高行政法院裁判確定</td><td>§7-4Ⅰ但書①</td></tr>
+<tr><td>Ⅰ但書②</td><td>當事人合意願由普通法院裁判</td><td>§7-4Ⅰ但書②</td></tr>
+<tr><td>Ⅱ</td><td>合意須記明筆錄或以文書證之</td><td>§7-4Ⅲ</td></tr>
+<tr><td>Ⅲ</td><td>最高法院裁定前給予陳述意見機會</td><td>所貼§7-4至§7-9無逐字對應，視為本條特有規定</td></tr>
+<tr><td>Ⅳ</td><td>上級審不得以無審判權廢棄</td><td>§7-5Ⅲ</td></tr></table></div>
+<h3>立法沿革（背景）</h3>
+<p>舊制：受移送法院亦認無審判權時，須裁定停止並聲請大法官解釋。憲法訴訟新制刪除機關聲請統一解釋後，民國110年12月修正本條，並將審判權爭議規範統一訂於法院組織法第7-2至7-11條；行訴§12-1至§12-5、§178與民訴§31-1至§31-3同時刪除。爭議改由「終審法院」終局判斷。</p></section>
+
+<section id="s4"><h2>四、逐項解析</h2>
+<h3>（一）適用要件</h3>
+<p>① 訴訟由<b>行政法院</b>移送而來（法組§7-3Ⅰ）；② 移送裁定確定（法組§7-4Ⅰ）；③ 受移送之<b>普通法院</b>認自己亦無審判權。</p>
+<h3>（二）效果：不得移回，應停止並請求指定</h3>
+<p><span class="yes">應裁定停止訴訟程序，並請求最高法院指定有審判權之管轄法院</span>。實務注意事項第10-1點亦明示：不得移回行政法院。最高法院認受移送法院有審判權→駁回；認無審判權→指定其他有審判權法院（法組§7-5Ⅰ），受指定法院受該裁定關於審判權認定之羈束（§7-5Ⅱ）。</p>
+<h3>（三）但書：兩款擇一，普通法院即自行審理</h3>
+<p>① 移送經最高行政法院裁判確定：審判權歸屬已由終審法院確定。② 當事人合意：合意須<b>記明筆錄或以文書證之</b>（Ⅱ）；僅未記明之口頭表示，不符形式要件（本講義分析）。</p>
+<h3>（四）程序保障與上級審限制</h3>
+<p>Ⅲ：最高法院裁定前應使當事人陳述意見（聽審權）。Ⅳ：普通法院已為裁判者，上級審不得以無審判權廢棄，維護訴訟安定；法組§7-5Ⅲ同旨。</p>
+<h3>（五）相關要點</h3>
+<p>移送裁定確定，視為自始繫屬於受移送法院（法組§7-7Ⅱ）；受移送法院可依聲請或職權撤銷停止裁定（§7-6Ⅰ）。民訴§249Ⅰ①之駁回，以「不能依法移送」為前提，故受移送後不得逕行駁回。</p></section>
+
+<section id="s5"><h2>五、學說見解</h2>
+<div class="placeholder"><i>✎</i>尚未加入學說見解內容<br>搜尋未找到可對應§182-1的具體學者見解與頁碼，待使用者提供或另行查證。<br><span class="badge">待補充</span></div></section>
+
+<section id="s6"><h2>六、實務見解</h2>
+<h3>大法官解釋（舊制背景，非直接解釋本條）</h3>
+<ul>
+<li><a target="_blank" href="https://cons.judicial.gov.tw/jcc/zh-tw/jep03/show?expno=466">釋字第466號</a>（1998-09-25）：我國採二元訴訟制度，私法爭執由普通法院、公法爭議由行政法院審判。</li>
+<li><a target="_blank" href="https://cons.judicial.gov.tw/jcc/zh-tw/jep03/show?expno=533">釋字第533號</a>：理由書再引述二元訴訟制度之區分。</li>
+<li><a target="_blank" href="https://law.moj.gov.tw/LawClass/ExContent.aspx?CC=D&CNO=758&media=print&ty=C">釋字第758號</a>及<a target="_blank" href="https://cons.judicial.gov.tw/download/download.aspx?id=379196">張瓊文大法官協同意見書</a>：意見書論及舊制下審判權消極衝突聲請大法官解釋之機制。</li></ul>
+<h3>行政規則與修法資料</h3>
+<ul>
+<li>辦理民事訴訟事件應行注意事項第10-1點（<a target="_blank" href="https://lawsnote.com/law/5c3598dd450c82001b48b6c2">轉載頁</a>）：不得移回；受最高行政法院裁判確定，僅受審判權認定之羈束。<span class="no">轉載網站，尚未經官方原文核實。</span></li>
+<li><a target="_blank" href="https://www.judicial.gov.tw/tw/cp-1887-435884-4dbbb-1.html">司法院新聞稿</a>（民訴修正草案）：審判權爭議改由終審法院終局判斷。</li></ul>
+<div class="placeholder"><i>⚖</i>最高法院適用本條之裁定：尚未搜尋到可確認案號<br>可至 judgment.judicial.gov.tw 查詢後提供。<br><span class="badge">待補充</span></div></section>
+
+<section id="s7"><h2>七、教學案例（AI虛構，教學用途）</h2>
+<div class="card"><header>案例一：能否移回？</header><div class="bd">
+<p><b>事實</b>：甲向高等行政法院起訴請求乙市政府給付價金，行政法院認屬私法爭議，裁定移送地方法院，裁定確定。地院法官認為該爭議屬公法爭議。</p>
+<p><b>爭點</b>：地院可否移回或駁回？</p>
+<p><b>分析</b>：移送裁定確定，地院受移送後認亦無審判權，且無但書事由，依§182-1Ⅰ本文與法組§7-4Ⅰ，不得移回，須停止訴訟並請求最高法院指定；最高法院裁定前應給予甲、乙陳述意見（Ⅲ）。</p>
+<p><b class="yes">結論</b>：<span class="no">不得移回或駁回</span>，應停止訴訟並請求指定。</p></div></div>
+<div class="card"><header>案例二：最高行政法院裁判確定</header><div class="bd">
+<p><b>事實</b>：承上，丙訴丁機關之案件，經最高行政法院裁判確定移送地院，地院仍認無審判權。</p>
+<p><b>爭點</b>：地院是否仍須請求指定？</p>
+<p><b>分析</b>：符合Ⅰ但書①，審判權歸屬已由終審法院確定，地院受該裁判關於審判權認定之羈束（法組§7-2Ⅲ）。</p>
+<p><b class="yes">結論</b>：無庸請求指定，地院應自行審理。</p></div></div>
+<div class="card"><header>案例三：當事人合意</header><div class="bd">
+<p><b>事實</b>：地院認無審判權，兩造於準備程序中均表示願由地院裁判，書記官已記明筆錄。另案中，戊、己僅在庭外口頭同意，未留任何紀錄。</p>
+<p><b>爭點</b>：兩案是否均可適用但書②？</p>
+<p><b>分析</b>：Ⅱ要求合意須記明筆錄或以文書證之。前案符合；後案欠缺形式要件。</p>
+<p><b class="yes">結論</b>：前案地院自行審理；<span class="no">後案不生合意效力</span>，仍應停止並請求指定。</p></div></div>
+<div class="card"><header>案例四：上級審能否廢棄？</header><div class="bd">
+<p><b>事實</b>：地院受移送後認有審判權，判決庚勝訴。辛上訴二審，主張本件屬公法爭議、普通法院無審判權，請求廢棄。</p>
+<p><b>爭點</b>：二審可否以無審判權廢棄？</p>
+<p><b>分析</b>：Ⅳ明定上級審不得以無審判權廢棄，法組§7-5Ⅲ同旨，以維護訴訟安定。</p>
+<p><b class="yes">結論</b>：<span class="no">不得以此理由廢棄</span>，其餘上訴理由仍得審查。</p></div></div></section>
+
+<section id="s8"><h2>八、申論練習題與模擬解答</h2>
+<div class="card q"><header>第一題</header><div class="bd"><p>普通法院受行政法院移送後，認自己亦無審判權，應如何處理？何以不得逕行移回？</p><p class="src">模擬解答：待補充</p></div></div>
+<div class="card q"><header>第二題</header><div class="bd"><p>試說明民事訴訟法第182條之1第1項但書兩款之意義，及當事人合意之形式要件。</p><p class="src">模擬解答：待補充</p></div></div>
+<div class="card q"><header>第三題</header><div class="bd"><p>試析第182條之1第4項「上級審不得以無審判權廢棄」之立法理由，並與法院組織法第7-5條第3項比較。</p><p class="src">模擬解答：待補充</p></div></div>
+<div class="card q"><header>第四題</header><div class="bd"><p>憲法訴訟新制施行後，審判權消極衝突之解決機制有何變革？其優點為何？</p><p class="src">模擬解答：待補充</p></div></div>
+<div class="placeholder"><i>✎</i>模擬解答尚未加入，待使用者提供<br><span class="badge">待補充</span></div>
+<div class="src">📂 <b>題目來源</b>｜Claude（AI）依條文自行出題，教學用途，非考古題</div></section>
+
+<section id="s9"><h2>九、速查卡</h2>
+<div class="quick"><ul>
+<li>前提：行政法院移送＋裁定確定＋普通法院亦認無審判權</li>
+<li>效果：<b>停止訴訟＋請求最高法院指定</b>，不得移回</li>
+<li>例外：最高行政法院裁判確定／合意（筆錄或文書）</li>
+<li>程序：最高法院裁定前，當事人陳述意見</li>
+<li>上級審：不得以無審判權廢棄</li>
+<li>配套：法院組織法§7-2～7-11</li></ul>
+<div class="motto">移來無權，停請最高；確定合意，自行審理</div></div></section>
+<div class="link-note"><b>相關主題</b><ul style="margin:6px 0 0"><li><a href="民訴249條-起訴之駁回.html">起訴之駁回──裁定駁回與判決駁回</a>（涵蓋第249條）</li></ul></div>
+</main>
+<script>
+const links=[...document.querySelectorAll('#nav a')];
+links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('section').forEach(s=>io.observe(s));
+</script></body></html>
